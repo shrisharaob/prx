@@ -1,0 +1,128 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=1.25cm,bottom=1.5cm,left=2cm,right=1cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\newcommand{\ueOne}{u_E^{(1)}}
+\newcommand{\ueOnei}{u_{E, i}^{(1)}}
+\newcommand{\sign}{\text{sign}}
+
+%\author{You}
+\date{}
+\begin{document}
+\section*{Adding specific connections}
+A neuron $i$ in population $A$ has PO $\Delta_A^i$. 
+Consider a network $\hat{C} $ where the probability of connections is given by, \\
+\begin{eqnarray}
+P(\hat{C}_{EE}^{ij} = 1) =&& \frac{K - 2 \kappa \, \omega \,  \sqrt{K}}{N_E}  \\
+P(\hat{C}_{EI}^{ij} = 1) =&& \frac{K}{N_I} \\
+P(\hat{C}_{IA}^{ij} = 1) =&& \frac{K}{N_A}; \,\, A \in {E, I} 
+\end{eqnarray}
+Assuming the wights $J_{AB}^{ij}$ are drawn from some arbitrary distribution $P_J$ with mean $J_{AB} = \left\langle J_{AB}^{ij} \right\rangle_{P_J}$ and finite variance of $J^2_{AB} = \left\langle \left( J_{AB}^{ij} \right)^2 \right\rangle_{P_J}$. \\
+Introducing a small number( i.e $ \mathcal{O} \left( \sqrt{K} \right)$) of specific connections of strength $\frac{J_{EE}}{\omega}$ in $EE$ such that, the probability of connections in new matrix $C$ is,
+\begin{eqnarray}
+P(C_{EE}^{ij} = 1 | \hat{C}_{EE}^{ij} = 0) =&& \frac{2 \kappa \omega \sqrt{K}}{N_E - K - 2 \kappa \omega \sqrt{K} } \left[ 1 + \cos2(\Delta_E^i - \Delta_E^j) \right] \\
+P(C_{EE}^{ij} = 1 | \hat{C}_{EE}^{ij} = 1) =&& 1  \\
+\Rightarrow P(C_{EE}^{ij} = 1) =&& P(C_{EE}^{ij} = 1 | \hat{C}_{EE}^{ij} = 0) P(\hat{C}_{EE}^{ij} = 0)\nonumber \\
+\quad&&  + \, P(C_{EE}^{ij} = 1 | \hat{C}_{EE}^{ij} = 1) P(\hat{C}_{EE}^{ij} = 1) \\
+=&& \frac{K}{N_E} \left[1 + \frac{2 \kappa \omega}{\sqrt{K}} \cos 2(\Delta_E^i - \Delta_E^j) \right]
+\end{eqnarray}
+%\[\sum_{B \in \lbrace 0, E, I \rbrace}  \]
+The time averaged input $u_A^{i} (\theta)$ to neuron $(i, A)$ at stimulus angle $\theta$ is given by, 
+\begin{eqnarray}
+u_E^{i} (\theta) =&& \tilde{u}_E + \sqrt{\beta_E + \beta_{E0}^{(0)}} x_i +  \sqrt{\beta_{E0}^{(1)}} z_i \cos 2 (\theta - \Delta_E^i) + \kappa J_{EE} m_E^{(1)} \cos 2 ( \theta  - \Delta_E^i) \\
+=&& \overline{u}_E(\theta, x_i, \Delta_E^i, \kappa) +  \sqrt{\beta_{E0}^{(1)}} z_i \cos 2 (\theta - \Delta_E^i) \\
+u_I^{i} (\theta) =&& \tilde{u}_I + \sqrt{\beta_I + \beta_{I0}^{(0)}} x_i +  \sqrt{\beta_{I0}^{(1)}} z_i \cos 2 (\theta - \Delta_I^i) \\
+=&& \overline{u}_I(\theta, x_i, \Delta_I^i) +  \sqrt{\beta_{I0}^{(1)}} z_i \cos 2 (\theta - \Delta_I^i)
+\end{eqnarray}
+% Where, 
+% \begin{eqnarray}
+% \alpha_{A} =&& \sum_{B \in \lbrace 0, E, I \rbrace} J_{AB}^2 m_B^{(0)} \\
+% \beta_{A}(\Delta) =&& \sum_{B \in \lbrace E, I \rbrace}  \left(J_{AB}\right)^2 q_B^{(0)}(\Delta) \\
+% \beta_{A0} (\Delta) =&& \beta_{A0}^{(0)} + \beta_{A0}^{(1)} \nonumber \\
+% =&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] \\
+% q_A (\theta, \Delta) =&& \int \mathcal{D} x \,  m_A(x, \theta + \Delta)  m_A(x, \theta - \Delta) 
+% \end{eqnarray}
+Which gives, 
+\begin{eqnarray}
+m_A^i(\theta) =&& m_A(x_i, \theta) = \int_{0}^{\infty} \mathtt{d} z\,  z \mathtt{e}^{-\frac{z^2}{2}} H\left( \frac{-u_A^i(\theta)}{\sqrt{\tilde{\alpha}_A }} \right), \,\, \tilde{\alpha}_A = \alpha_A - \beta_A - \beta_{A0}^{(0)} - \beta_{A0}^{(1)}  \\
+=&& H\left( \frac{-\overline{u}_A }{\sqrt{\tilde{\alpha}_A }}  \right) + \sqrt{\frac{\beta_{A0}^{(1)} }{  \tilde{\alpha}_A + \beta_{A0}^{(1)} \cos^2 2 (\theta - \Delta_A^i) }} \nonumber \\ 
+\times&&  \exp \left( \frac{\left( \overline{u}_A \right)^2  }{ 2 \tilde{\alpha}_A} \left[ 1 + \frac{\beta_{A0}^{(1)} }{ \tilde{\alpha}_A + \beta_{A0}^{(1)} \cos^2 2 (\theta - \Delta_A^i)  } \cos^2 2 (\theta - \Delta_A^i) \right] \right) \nonumber \\
+\times&& \left[ H \left( - \frac{ \sqrt{\beta_A^{(1)} } \overline{u}_A \cos 2 (\theta - \Delta_A^i)} {  \tilde{\alpha}_A + \beta_{A0}^{(1)} \cos^2 2 (\theta - \Delta_A^i) } \right) - 1 \right] \cos2(\theta - \Delta_A^i) \label{mAiofTheta} 
+\end{eqnarray}
+The population averaged inputs $u_A(\theta) = \left\langle u_A^i(\theta) \right\rangle_{i}$ is given by, 
+\begin{eqnarray}
+u_E(\theta) =&& \tilde{u}_E + \frac{1}{\sqrt{2}} J_{E0} m_0^{(1)} \cos 2 \theta + \kappa J_{EE} m_E^{(1)} \cos 2 \theta \\
+u_I(\theta) =&& \tilde{u}_I + \frac{1}{\sqrt{2}} J_{I0} m_0^{(1)} \cos 2 \theta 
+\end{eqnarray}
+\begin{eqnarray}
+m_E^{(0)} =&& \frac{1}{\pi} \int \mathtt{d} \theta H \left( \frac{-\tilde{u}_E - \frac{1}{\sqrt{2}} J_{E0} m_0^{(1)} \cos 2 \theta - \kappa  J_{EE} m_E^{(1)} \cos 2 \theta}{\sqrt{\alpha_E} } \right)  \label{me0} \\
+m_E^{(1)} =&& \frac{2}{\pi} \int \mathtt{d} \theta H \left( \frac{-\tilde{u}_E - \frac{1}{\sqrt{2}} J_{E0} m_0^{(1)} \cos 2 \theta - \kappa  J_{EE} m_E^{(1)} \cos 2 \theta}{\sqrt{\alpha_E} } \right) \cos 2 \theta  \label{me1} \\
+m_I^{(0)} =&& \frac{1}{\pi} \int \mathtt{d} \theta H \left( \frac{-\tilde{u}_I - \frac{1}{\sqrt{2}} J_{I0} m_0^{(1)} \cos 2 \theta}{\sqrt{\alpha_I} } \right)  \label{mi0} \\
+m_I^{(1)} =&& \frac{2}{\pi} \int \mathtt{d} \theta H \left( \frac{-\tilde{u}_I - \frac{1}{\sqrt{2}} J_{I0} m_0^{(1)} \cos 2 \theta }{\sqrt{\alpha_I} } \right) \cos 2 \theta  \label{mi1}
+\end{eqnarray}
+
+\begin{eqnarray}
+\alpha_{A} =&& \sum_{B \in \lbrace 0, E, I \rbrace} J_{AB}^2 m_B^{(0)} \\
+\beta_{A}(\Delta) =&& \sum_{B \in \lbrace E, I \rbrace}  \left(J_{AB}\right)^2 q_B^{(0)}(\Delta) \\
+\beta_{A0} (\Delta) =&& \beta_{A0}^{(0)} + \beta_{A0}^{(1)} \nonumber \\
+=&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] \\
+q_A (\theta, \Delta) =&& \int \mathcal{D} x \,  m_A(x, \theta + \Delta)  m_A(x, \theta - \Delta) 
+\end{eqnarray}
+
+$m_A(x, \theta)$ is given by Eq. \ref{mAiofTheta}
+
+\subsubsection*{Symmetry breaking: Bump solution}
+Expanding $H(\cdot)$ at the fixed point(Eq. \ref{me1}) for small $m_E^{(1)}$ and integrating,
+\begin{eqnarray}
+m_E^{(1)} \, F(\kappa) + \left( m_E^{(1)} \right)^3 \,  G(\kappa) + \mathcal{O} \left(\left( m_E^{(1)} \right)^5 \right) = 0
+\end{eqnarray}
+
+If, $\exists \kappa_c: F(\kappa_{c}) = 0$, then $\forall \kappa>\kappa_c$, $m_E^{(1)} \neq 0$ solutions are stable if $\sign (G(\kappa_c)) = -1 $  
+
+\begin{eqnarray}
+%p_c = 3.404
+\kappa_{c} &= \frac{ - \sqrt{\alpha_E^{\star (0)}}}{J_{EE} H^{\prime}(h^{\star})}; \,\,\,\, h^{\star} = \frac{- u_E^{\star (0)}}{\sqrt{\alpha_E^{\star (0)}}} 
+\end{eqnarray}
+
+\subsubsection*{Stability of the bump solution}
+When $K \rightarrow \infty$, 
+\begin{eqnarray}
+G(\kappa_c)  =&& -\frac{\kappa^3_c J_{EE}^{3}}{\left( \alpha_E^(0) \right)^{\frac{3}{2}}} \left[ \frac{1}{8} H^{\prime \prime \prime} (A_0) - \frac{1}{4} \frac{\left( H^{\prime \prime} (A_0)\right)^2 }{H^{\prime}(A_0)} \right] \\
+=&& - \frac{e^{\frac{-A^2_0}{2}}}{\sqrt{2 \pi}} \frac{\kappa^3_c J_{EE}^{3}}{\left( \alpha_E^(0) \right)^{\frac{3}{2}}}  \left[1 + A^2_0 \right] \\
+\Rightarrow&& \sign(G(\kappa_c)) = -1
+\end{eqnarray}
+where, $A_{0} = H^{-1}(m_E^{(0)}))$
+
+
+\section*{OSI distribution}
+\newcommand{\mZero}{m_E^{(0)}}
+\newcommand{\mOne}{m_E^{(1)}}
+\newcommand{\zZero}{z^{(0)}}
+\newcommand{\zOne}{z^{(1)}}
+Generating $m_A^i(\theta)$ by sampling from Eq. \ref{mAiofTheta} , the distribution of OSI can be obtained as a function of $\kappa$. \\
+The OSI for the $i^{th}$ cell is defined as: 
+\begin{equation}
+s_{i} = \frac{| \zOne_i |}{ \zZero_i}, \,\,\,\, |z| = \sqrt{(\mathrm{Re}(z))^2 + (\mathrm{Im}(z))^2}
+% s_{i} = \frac{ \zOne_i }{ \zZero_i}, \,\,\,\, z = \sqrt{(\mathrm{Re}(z))^2 + (\mathrm{Im}(z))^2}
+\label{defosi}
+\end{equation}
+
+where,\\
+\begin{equation}
+z_i^{(n)} = \frac{1}{\pi} \int_0^{\pi} d \phi \,  m^i(\phi) \, \exp (2 \, n \,  j \, \phi)) \,\,\,\,; \,\,\,\, j = \sqrt{-1}
+\end{equation}
+
+
+\end{document}

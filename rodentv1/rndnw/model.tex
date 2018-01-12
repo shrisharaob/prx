@@ -1,0 +1,100 @@
+We model a network of neurons that are selective for a 1-dimensional stimulus 
+feature $\theta$\@. To avoid the difficulty of having to deal with what happens
+at the boundary we assume that $\theta$ is a periodic  variable with period 
+$2\pi$\@.. 
+The network consists of $N_E$ excitatory and $N_I$ inhibitory 
+neurons organized on a $2\pi$ periodic ring. We denote neuron $i$ of 
+population $a$ (with $a=E,I$ and $i=1,2,\ldots,N_a$) as neuron $(i,a)$. 
+The position on the ring of neuron $(i,a)$ is $\phi_i^a=2\pi i/N_a$.
+
+The neurons are modeled as sequentially updated
+binary units. The state, $\sigma_i^a$, of neuron $(i,a)$ is updated, 
+on average, once per time constant $\tau_a$\@. It is set to zero if, at the 
+time of the update, its input, $u_i^a$, is below the threshold, $T_a$, 
+and set to one otherwise.
+
+The input, $u_i^a$, has three components: the feedforward input, $u_i^{a0}$, 
+from excitatory units in the input layer, the recurrent excitatory input, 
+$u_i^{aE}$, and the recurrent inhibitory feedback, $u_i^{aI}$\@. 
+
+The recurrent excitation and inhibition are given by
+\begin{equation}
+u_i^{ab}(t)=\frac{J_{ab}}{\sqrt{K}}\sum_{j=1}^{N_b}C_{ij}^{ab}\sigma_j^b(t)
+\qquad \qquad (b=E,I),
+\end{equation}
+where $J_{ab}/\sqrt{K}$, with $J_{aE}>0$ and $J_{aI}<0$, is the contribution 
+of an active presynaptic cell to the recurrent input.
+The connection matrix $C_{ij}^{ab}$ is randomly chosen: $C_{ij}^{ab}=1$ 
+with probability $P_{ij}^{ab}=\frac{K}{N_b}[1+2p_{ab}\cos (\phi_i^a-\phi_j^b)]$
+and $C_{ij}^{ab}=0$ otherwise. Thus, on average a neuron receives recurrent 
+input from $K$ excitatory and $K$ inhibitory units. The modulation, $p_{ab}$, 
+$0\leq p_{ab} \leq 1/2$, determines how much the connection probability from 
+population $b$ to population $a$ depends on the distance between neurons on 
+the ring. Note that, for convenience in the analysis we have assumed that the 
+distance dependence of the connection probability is given by 
+$1+p\cos(\Delta \phi)$. However, other unimodal probability profiles that are 
+symmetric and have their peak at $\Delta\phi=0$ show qualitatively similar 
+behavior.
+
+The neurons in the network receive feedforward input, $u_i^{a0}$, from 
+excitatory neurons in the input layer.
+We assume that there is a pool of $N_0$ of such excitatory neurons 
+whose average activity, $m_i^0$, is given by
+\begin{equation}
+m_i^0=m_0[1+\mu\cos (\theta-\phi_i^0)]\equiv m_0(\theta-\phi_i^0).
+\end{equation}.
+Here $\theta$ is the feature value of the stimulus and $\phi_i^0=2\pi i/N_0$ 
+is the preferred feature value of neuron $(i,0)$\@. The average activity, 
+$m_0$, is an increasing function of the stimulus intensity and $\mu$ determines 
+how much the response of the input cells is modulated with the stimulus feature.
+
+We consider two models for the pool of input units. In the first the activity,
+$\sigma_u^0$ is a continous variable that does not change over time, 
+$\sigma_i^a(t)=m_i^a$\@. In the second model the input units are binary 
+variable that are sequentially updated, with each cell updated on average once 
+per time constant $\tau_0$, at the up[date $\sigma_i^0$ is set to 1 with 
+probability $m_i^0$ and set to zero otherwise.
+
+The feedforward input, $u_i^{a0}$, is given by
+\begin{equation}
+u_i^{a0}(t)=\frac{J_{a0}}{c\sqrt{K}}\sum_{j=1}^{N_0}C_{ij}^{a0}\sigma_j^0(t),
+\end{equation}
+where the feedforward connection matrix is a random matrix with $C_{ij}^{a0}=1$,
+with probability $P_{ij}^{a0}$ and 0 otherwise. On average, neurons receive
+input from $K_0=cK$ input neurons and the connection probability,
+$P_{ij}^{a0}$ varies with the difference in position between the pre- and
+post synaptic cell as a periodic Gaussian with period $2\pi$ and variance
+$\sigma_{a0}$, 
+$P_{ij}^{a0}=\frac{2\pi K_0}{N_0}G(\phi_i^a-\phi_j^0,\sigma_{a0})$, 
+where 
+\begin{equation}
+G(\theta,\sigma)\equiv\frac{1}{\sqrt{2\pi}\sigma}
+\sum_{k=-\infty}^{\infty}\exp\left(-\frac{(\theta+2k\pi)^2}{2\sigma^2}\right).
+\end{equation}
+
+The width $\sigma_{a0}$ determines the spread of preferred feature values of
+the input neuron that project to a particular cell. Since 
+$0\leq P_{ij}^{a0}\leq 1$, $\sigma_{a0}$ is bounded by a minimal value 
+$\sigma_{a,min}$\@. However, we will consider the network in the sparse limit
+where $K/N_0\rightarrow 0$ (see below). In this limit 
+$\sigma_{a,min}\rightarrow 0$\@. Thus we have two extreme cases: The case where 
+$\sigma_{a0}\rightarrow\infty$, in which neuron $(i,a)$ receives input from,
+on average, $K_0$ excitatory input cells whose orientations are
+chosen randomly, and the case where $\sigma_{a0}=0$, in which neuron $(i,a)$
+receives feedforward input from, on average, $K_0$ cells, all of which have 
+preferred feature value $\phi_i^a$\@. In the latter case the total feedforward 
+input into neuron $(i,a)$ is as strongly modulated with the feature value as 
+the output of cells in the input layer and for neighboring cells in the network
+the preferred feature of the total feedforward input is similar. In the first 
+case, $\sigma_{a0}\rightarrow\infty$, the 
+modulation of the total feedforward input will be of order $1/\sqrt{K_0}$
+smaller relative to the mean as is the case for the response of the 
+cells in the input layer. Furthermore the preferred feature of the total 
+feedforward input into neighboring cells is totally uncorrelated. Thus here 
+the probability of recurrent connections between cells in the network is not 
+correlated with the preferred feature of the feedforward input. The network 
+has no functional feature map. 
+
+We study this model in the limit where the connectivity is sparse and $K$ is
+large: We first take the limit $N_a\rightarrow\infty$ for $a=0,E,I$ and then 
+the limit $K\rightarrow \infty$\@. 

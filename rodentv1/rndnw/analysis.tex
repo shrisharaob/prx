@@ -1,0 +1,428 @@
+The analysis is similar to that of van Vreeswijk and Sompolinsky 
+\cite{vanVreeswijk2005}, to which we refer for further details.
+ 
+\subsection{Coarse grained analysis}
+Because the strength of the synapses scales as $1/\sqrt{K}$, temporal 
+fluctuations in the input do not vanish in the large $K$ limit. 
+Furthermore, because  of the randomness of the connectivity and feedforward 
+input, the time-average input for neurons of the same population is not the 
+same, even for neurons which are very close. 
+ 
+To analyze the network response we calculate the statistics of the different
+variables for neurons $(i,A)$ with $\phi_i^a$ between $\phi$ and
+$\phi+\delta\phi$ for a sufficiently small $\delta\phi$\@. Sincw we consider
+the network in the limit $N_a\rightarrow \infty$, we can make $\delta\phi$ 
+arbitrarily small.
+Averages over this subpopulation of variables $X_i^a$ are denoted by
+$\langle X_i^a\rangle_{\phi,\delta\phi}$\@. Because of the 
+rotational and mirror symmetry of the system we have that, for a stimulus with 
+orientation $\theta$, this average satisfies 
+$\langle u_i^A(t)\rangle_{\phi,\delta\phi}=u_A(\theta-\phi,t)$, where $u_A$ is 
+symmetric. In fact for all variables $X$ of interest the average will satisfy $\langle X_i^A \rangle_{\phi,\delta \phi}=f_A
+(\theta-\phi)$ for some symmetric function $f_A$. For exmple, when the network has reached its equilibium, we have that
+$\langle\sigma_i^a(t)\rangle_{\phi,\delta\phi}=
+\langle m_i^a\rangle_{\phi,\delta\phi}=m_a(\theta-\phi)$\@. Here $m_i^a$ is the
+the time averaged value of $\sigma_i^a$\@. Because of this rotational symmetry,
+it is sufficient to calculate the average quantities only for $\phi=0$ at 
+different values $\theta$ of the stimulus. For notational convenience we will 
+denote $\langle \cdot \rangle_{0,\delta \phi}$ by 
+$\langle \cdot \rangle_{\delta \phi}$\@.
+
+In the steady state, when the activities are constant, we can write the input 
+into neuron $(i,a)$, for a stimulus with orientation $\theta+\phi_i^a$ as
+\begin{equation}
+u_i^a(t)=u_{a}(\theta)+\Delta u_i^{a}(\theta)+\delta u_i^{a}(t),
+\label{input_terms:eq}
+\end{equation}
+where $u_{a}$ is the population averaged input and the quenched disorder in 
+$u_i^a$, $\Delta u_i^{a}$, is the
+difference between the averaged input into the neuron and the population 
+average, $\Delta u_i^{a}\equiv \langle u_i^a-u_a\rangle_t$, where
+$\langle\cdots\rangle_t$ denotes the average over time.
+Finally, $\delta u_i^{a}(t)$ represents the temporal fluctuation in the input.
+
+Because $\Delta u_i^a$ and $\delta u_i^{a}(t)$ are composed of many small
+contributions, they have Gaussian statistics.
+Thus we alternatively can write
+\begin{equation}
+u_i^a(t)=u_{a}(\theta)+\sqrt{\gamma_a(\theta)}x_i^a(\theta)+
+\sqrt{\alpha_a(\theta)-\gamma_a(\theta)}y_i^a(t),
+\label{input_terms1:eq}
+\end{equation}
+where $\gamma_a$ and $\alpha_a-\gamma_a$ are the variance of the quenched 
+disorder and the temporal fluctuations respectively, and $x_i^a$ and $y_i^a$ 
+are Gaussian random variables with mean 0 and variance 
+$\langle [x_i^a]^2\rangle_{\delta \phi}=
+\langle [y_i^a(t)]^2\rangle_{\delta \phi}=1$\@. Furthermore, for sufficiently 
+large $t-t^\prime$, $y_i^a(t)$ and $y_i^a(t^\prime)$ are uncorrelated,
+$\langle y_i^a(t)y_i^a(t^\prime)\rangle_{\delta \phi}\rightarrow 0$, for
+$|t-t^\prime|\rightarrow\infty$\@.
+
+In the steady state, the average activity of neuron $(i,a)$, $m_i^a=
+\langle \sigma_i^a\rangle_t$, is equal to the probability that the
+fluctuations bring the input above threshold,
+\begin{equation}
+m_i^a=\int\! Dy
+\,\Theta \left(u_a+\sqrt{\gamma_a}x_i^a+\sqrt{\alpha_a-\gamma_a}y-T_a\right),
+\end{equation}
+where $\Theta$ is the Heaviside function, $\Theta(x)=1$ for $x>0$ and
+$\Theta(x)=0$ for $x<0$and $Dy$ is the Gaussian measure, 
+$Dy=exp(-y^2/2)dy/\sqrt{2\pi}$\@. This can be written as
+\begin{equation}
+m_i^a=H\left(\frac{T_a-u_a-\sqrt{\gamma_a}x_i^a}{ \sqrt{\alpha_a-\gamma_a}}
+\right).
+\label{indiv-rate:eq}
+\end{equation}
+Here $H$ denotes the cumulative Gaussian distribution,
+$H(x)=\frac{1}{\sqrt{2\pi}}\int_x^\infty\!dy\,e^{-y^2/2}$\@.
+
+Because we know the distribution of $x_i^a$, Eqn.~(\ref{indiv-rate:eq}) 
+determines, for a stimulus with given intensity, $m_0$, and feature value, 
+$\theta$, the distribution 
+of the activities for neurons $(i,a)$ with $\phi<\phi_i^a<\phi+\delta\phi$, 
+if we know $u_a$, $\alpha_a$ and $\gamma_a$\@. 
+
+However, we also need to take into account that the random variable $x_i^a$
+changes when the stimulus parameters are changed. For example, if
+$\theta$ is changed to $\theta^\prime$, $x_i^a$ changes to
+$x_i^{\prime a}$ and one would expect $x_i^{\prime a}$ to be close to
+$x_i^a$ if $\theta-\theta^\prime$ is small. Thus the input statistics of 
+population $a$ is fully known if we have a
+description of $u_a$ and $\alpha_a$ for any $m_0$ and $\theta$ and if we know 
+the correlation in the quenched disorder for any pair of stimuli,
+$(m_0,\theta)$ and $(m_0^\prime,\theta^\prime)$.  Below we will sketch
+the analysis to derive these parameters.
+
+A convenient feature of the binary neuron model is that the average activity,
+$m_a\equiv\langle m_i^a\rangle_{\delta\phi}$, given by
+\begin{eqnarray}
+m_a(\theta) & = &\int\! Dx
+H\left(\frac{T_a-u_a(\theta)-\sqrt{\gamma_a(\theta)}x}
+{ \sqrt{\alpha_a(\theta)-\gamma_a(\theta)}}\right) \nonumber \\
+ & = & H\left(\frac{T_a-u_a(\theta)}{\sqrt{\alpha_a(\theta)}}\right),
+\label{meanrate:eq}
+\end{eqnarray}
+is independent of $\gamma_a$\@. Thus if we can express $u_a$ and $\alpha_a$ 
+in the mean activities, $m_b$, this together with Eqn.~(\ref{meanrate:eq}) 
+determines these quantities.
+
+\subsection{Population averaged inputs}
+The term $u_a(\theta)$ in Eqn.~(\ref{input_terms:eq}) is the average 
+of the input $u_i^a$, for neurons 
+in population $a$ with $0<\phi_i^a<\delta \phi$, when the stimulus feature 
+value is $\theta$. It satisfies
+$u_a(\theta)=\sum_{a=0,E,I}u_{ab}(\theta)$.
+The feedforward input, $u_{a0}$ is given by
+\begin{eqnarray}
+u_{a0}(\theta) & = & \langle u_i^{a0}\rangle_{\delta\phi}= 
+\frac{J_{a0}}{c\sqrt{K}}\sum_{j=1}^{N_0}\langle C_{ij}^{a0}
+\rangle_{\delta\phi}m_0(\theta-\phi_j^0)
+\nonumber \\
+   & = &  \sqrt{K}J_{a0}\int_0^{2\pi} d\phi^\prime\, G(\phi^\prime,\sigma_{a0})
+m_0(\theta-\phi^\prime).
+\end{eqnarray}
+Using $\int_0^{2\pi} d\phi^\prime\, G(\phi^\prime,\sigma)\exp(ni\phi^\prime) =
+exp(-n^2\sigma^2/2)$ this can be written as
+\begin{equation}
+u_{a0}(\theta)=\sqrt{K}J_{a0}m_0[1+\mu\zeta_a\cos \theta],
+\label{uA0:eq}
+\end{equation}
+where $\zeta_a\equiv e^{-\sigma_{a0}^2/2}$\@.
+
+Similarly the feedback input $u_{ab}$, with $b=E,I$, satisfies
+\begin{eqnarray}
+u_{ab}(\theta) & = & \langle u_i^{ab}\rangle_{\delta\phi} = 
+\frac{J_{ab}}{\sqrt{K}} \sum_{j=1}^{N_b}
+\langle C_{ij}^{ab}\rangle_{\delta\phi}m_b(\theta-\phi_j^b)
+\nonumber \\
+& = & \sqrt{K}J_{ab}\left[ m_b^{(0)}+p_{ab}m_b^{(1)}\cos \theta\right].
+\label{uAB:eq}
+\end{eqnarray}
+Here $m_a^{(k)}$ is the $k$th Fourier moment of $m_a$, $m_a(\theta)=
+\sum_{k=0}^\infty m_a^{(k)}\cos k\theta$\@.
+ 
+\subsection{Equal Time Fluctuations of the Inputs}
+Because the random connection matrices and feedforward inputs 
+are independent, the fluctuations in the different components of the 
+input are independent so that we can write for $\alpha_a$,
+$\alpha_b(\theta)=\sum_{b=0,E,I}\,\alpha_{ab}(\theta)$,
+where $\alpha_{ab}(\theta)=
+\langle [u_i^{ab}(t)-u_{ab}(\theta)]^2\rangle_{\delta\phi}$\@.
+
+For the variance of the feedback, $\alpha_{ab}$, with $b=E,I$, we have
+(see \cite{vanVreeswijk2005})
+\begin{eqnarray} 
+\alpha_{ab}(\theta) & = &\frac{J_{ab}^2}{K}\sum_j
+\langle C^{ab}_{ij}\rangle_{\delta\phi} m_b(\theta-\phi_j^B)
+\nonumber \\
+ & = & J_{ab}^2[m_b^{(0)}+p_{AB}m_b^{(1)}\cos \theta].
+\label{alAB:eq}
+\end{eqnarray}
+
+The equal time variance of the feedforward input depends on the model of the 
+of the external input. If the input is from unit with continuous output,
+$\sigma_i^0=m_i^0$, $\alpha_{a0}$ is given by
+\begin{eqnarray}  
+\alpha_{a0}(\theta) & = &\frac{J_{a0}^2}{c^2K}\sum_j \langle C_{ij}^{a0}
+\rangle_{\delta\phi}m_0^2(\theta-\phi_i^0) \nonumber \\
+ & = & \frac{[J_{a0}m_0]^2}{c}\Big[1+2\mu\zeta_a\cos \theta+\nonumber \\
+ & & \mbox{}+\frac{\mu^2}{2}(1+\zeta_a^4\cos 2\theta)\Big].
+\label{alA0:eq}
+\end{eqnarray}
+Alternatively when the input neurons are modeled as 
+binary units with  are randomly updated and set to 1 with a probability
+$m_i^0$ and to 0 otherwise, $\alpha_{a0}$ is given by
+\begin{eqnarray}  
+\alpha_{a0}(\theta) & = &\frac{J_{a0}^2}{c^2K}\sum_j \langle C_{ij}^{a0}
+\rangle_{\delta\phi}m_0(\theta-\phi_i^0) \nonumber \\
+ & = & \frac{J_{a0}^2m_0}{c}\Big[1+\mu\zeta_a\cos \theta\Big].
+\label{alA0a:eq}
+\end{eqnarray} 
+
+
+\subsection{The Balanced Solution}
+In the steady state the averaged activities $m_a$ are given by Eqn.~(\ref
+{meanrate:eq}), where by combining Eqns.~(\ref{uA0:eq}) and (\ref{uAB:eq}), we 
+can write $u_a$ as $u_a(\theta)= u_a^{(0)}+u_a^{(1)}\cos \theta$, while with
+Eqns.~(\ref{alAB:eq}) and (\ref{alA0:eq}) we can write $\alpha_a$ as 
+$\alpha_a(\theta)= \alpha_a^{(0)}+\alpha_a^{(1)}\cos \theta+
+\alpha_a^{(2)}\cos 2\theta$\@.
+The equal time fluctuations $\alpha_a$ are of order 1, while $u_a$ is of order 
+$\sqrt{K}$, unless the leading terms in $u_a^{(0)}$ and $u_a^{(1)}$ cancel.
+In the large $K$ limit this means that, when this cancellation does not take 
+place, $m_a$ goes to either $m_a=0$ or $m_a=1$,
+depending on the sign of $u_a$. 
+Therefore the only way in which the system can have low, but non-zero, 
+activities is if in the leading order of both $u_a^{(0)}$ and $u_a^{(1)}$, the 
+recurrent inhibitory input cancels the total feedforward and recurrent 
+excitatory input.
+
+Imposing this requirement for both populations leads to the balanced
+solution where, up to a correction term of order $1/\sqrt{K}$, $m_a$ satisfies
+$m_a^{(0)}=A_a^{(0)}m_0$, and $m_a^{(1)}=A_a^{(1)} m_0$, where
+\begin{eqnarray}
+A_E^{(1)} & = & \frac{J_{EI}J_{I)}-J_{II}J_{E0}}{J_{EE}J_{II}-J_{EI}J_{IE}},
+\nonumber \\
+A_I^{(1)} & = & \frac{J_{IE}J_{E0}-J_{EE}J_{I0}}{J_{EE}J_{II}-J_{EI}J_{IE}},
+\nonumber \\
+A_E^{(1)} & = & \mu\frac{p_{EI}\zeta_I J_{EI}J_{I0}-p_{II}\zeta_E J_{II}J_{E0}}
+             {p_{EE}p_{II}J_{EE}J_{II}-p_{EI}p_{IE}J_{EI}J_{IE}},
+\nonumber \\
+A_I^{(1)} & = & \mu\frac{p_{IE}\zeta_E J_{IE}J_{E0}-p_{EE}\zeta_I J_{EE}J_{I0}}
+             {p_{EE}p_{II}J_{EE}J_{II}-p_{EI}p_{IE}J_{EI}J_{IE}}.
+\end{eqnarray}
+Since $m_a(\theta)$ need to be positive, The connection strengths 
+$J_{ab}$ need to be chosen such that $A_a^{(0)}$ is positive and the tuning 
+of the feedback connections, $p_{ab}$, need to be chosen such that
+$|A_a^{(1)}|<A_a^{(0)}/\mu\zeta_a$\@. If we further impose that $|J_{EE}J_{II}|<
+|J_{EI}J_{IE}|$ it can be shown that the network will always evolve to the 
+balanced state, provided that the average update time of the inhibitory cells, 
+$\tau_I$, is sufficiently small compared to $\tau)E$, the update time of the 
+excitatory population \cite{vanVreeswijk1998}.
+
+The balance equatios determines $\alpha_a$ in the large $K$ limit (Eqn.~(\ref{alAB:eq})). 
+But $u_a$ now depends on 
+the $1/\sqrt{K}$ corrections of the activity and remains to be determined. 
+The average, $u_a^{(0)}$, and modulation, $u_a^{(1)}$, are determined by
+\begin{equation}
+m_a^{(0)}=\frac{1}{2\pi}\int_0^{2\pi}\!d\theta\,
+H\left(\frac{T_A-u_a^{(0)}-u_a^{(1)}\cos \theta}{\sqrt{\alpha_a(\theta)}}
+\right)
+\end{equation}
+and
+\begin{equation}
+m_a^{(1)}=\frac{1}{\pi}\int_0^{2\pi}\!d\theta\,
+H\left(\frac{T_A-u_a^{(0)}-u_a^{(1)}\cos \theta}{\sqrt{\alpha_a(\theta)}}
+\right)\cos \theta.
+\end{equation}
+
+\subsection{Statistics of the Quenched Disorder:}
+The activity $m_i^a(\theta)$ satisfies
+\begin{equation}
+m_i^a(\theta)=H\left(\frac{T_A-u_a(\theta)-\sqrt{\gamma_a(\theta)}
+x_i^a(\theta)}{\sqrt{\alpha_a(\theta)-\gamma_a(\theta)}}\right).
+\label{ind-rate:eq}
+\end{equation}
+Since $x_i^a(\theta)$ is drawn from a Gaussian with mean 0 and variance 1,
+this completely determines the distribution of activitie, 
+$\Pr[m_i^a(\theta)]$, if $\gamma_a$ is known. However, to calculate the joint 
+distribution, $\Pr[m_i^a(\theta_1),m_i^a(\theta_2),\ldots,m_i^A(\theta_n)]$ of 
+the activities of a neuron, for stimulus feature values 
+$\theta_1,\theta_2,\ldots,\theta_n$, we need to know the joint statistics of 
+disorder variables, $x_i^a(\theta_1),
+x_i^a(\theta_2),\ldots,x_i^a(\theta_n)$\@. Luckily these are Gaussian 
+random variables, so that their joint statistics are fully determined by the 
+cross-correlations, 
+$\langle(x_i^a(\theta_k)x_i^a(\theta_l)\rangle_{\delta\phi}$\@.
+We will now determine these correlations.
+
+It is convenient to write the correlations between $x_i^a$ at angle 
+$\theta+\Delta$ and $x_i^a$ at angle $\theta-\Delta$ as
+$\langle x_i^a(\theta+\Delta)x_i^a(\theta-\Delta)\rangle_{\delta\phi}=
+\frac{\beta_a(\theta,\Delta)}
+{\sqrt{\gamma_a(\theta+\Delta)\gamma_a(\theta-\Delta)}}$\@. Since
+$\langle [x_i^a(\theta)]^2\rangle_{\delta\phi}=1$, we have that 
+$\beta_a(\theta,0)=\gamma_a(\theta)$\@.
+
+We introduce a new order parameter, $q_a$ defined by $q_a(\theta,\Delta)\equiv
+\langle m_i^a(\theta+\Delta)m_i^a(\theta-\Delta)\rangle_{\delta\phi}$\@.
+This is the joint probability of a neuron being in the active state both
+for a stimulus at $\theta+\Delta$ and at $\theta-\Delta$.
+It can be calculated using Eqn.~(\ref{ind-rate:eq}), by averaging over 
+the correlated Gaussian variables $x_i^a(\theta+\Delta)$ and 
+$x_i^a(\theta-\Delta)$\@. After some algebra one obtains
+\begin{eqnarray}
+q_{a}(\theta,\Delta)  & = & 
+\int\!Dx\, H\left(\frac{T_a-u_a^+-\sqrt{\beta_a}x}
+{\sqrt{\alpha_a^+-\beta_a}}\right)\times \nonumber \\
+ & & \makebox[0.3in]{}\times H\left(\frac{T_a-u_a^--\sqrt{\beta_a}x}
+{\sqrt{\alpha_a^--\beta_a}}\right),
+\label{qA:eq}
+\end{eqnarray}
+where we used the abbreviations, $u_a^\pm=u_{a}(\theta\pm\Delta)$,
+$\alpha_a^\pm=\alpha_{a}(\theta\pm\Delta)$ and
+$\beta_a=\beta_{a}(\theta,\Delta)$\@.
+
+Following the same logic as for the fluctuations $\alpha_a$, we can write for
+the correlations $\beta_{a}$, $\beta_{a}(\theta,\Delta)=
+\sum_{b=0,E,I}\beta_{ab}(\theta,\Delta)$, where 
+$\beta_{ab}(\theta,\Delta)=
+\langle u_i^{ab}(t)u_i^{ab}(t^\prime)\rangle_{\delta\phi}-
+\langle u_i^{ab}(t)\rangle_{\delta\phi}
+\langle u_i^{ab}(t^\prime)\rangle_{\delta\phi}$ is the 
+contribution to the input correlation due to input from population $b$\@.
+
+The contribution to this correlation from the external input is given by
+\begin{eqnarray}  
+\beta_{a0}(\theta,\Delta) & = & \frac{J_{a0}^2 m_0^2}{c^2K}\sum_j
+\langle C_{ij}^{a0}\rangle_{\delta\phi}\times \nonumber \\
+ & & \makebox[0.1in]{}\times m_0(\theta+\Delta-\phi_j^0)
+       m_0(\theta-\Delta-\phi_j^0)
+\nonumber \\
+ & = & \frac{J_{a0}^2 m_0^2}{c}\Big[
+1+2\mu\zeta_a\cos\theta\cos\Delta + \nonumber \\
+ & & \makebox[0.2in]{}+\frac{\mu^2}{2}(\cos 2\Delta+\zeta_A^4\cos 2\theta)
+\Big].
+\end{eqnarray}
+
+The input correlations due to the two feedback components, $\beta_{ab}$,
+with $b=E,I$, depend on $q_{a}$ and are given by
+(see \cite{vanVreeswijk2005})
+\begin{eqnarray} 
+\beta_{ab}(\theta,\Delta) & = &
+\frac{J_{ab}^2}{K}\sum_j\langle C_{ij}^{a0}\rangle_{\delta\phi}
+q_b(\theta-\phi_j^b,\Delta) \nonumber \\
+ &= &J_{ab}^2[q_{b}^{(0)}(\Delta)+p_{ab}q_{b}^{(1)}(\Delta)\cos\theta],
+\label{betaA:eq}
+\end{eqnarray}
+where $q_{b}^{(k)}$ is the $k$th Fourier component in the variable $\theta$ of
+$q_{b}$, $q_{b}(\theta,\Delta)=\sum_k q_{b}^{(k)}(\Delta)\cos k\theta$\@.
+
+This expresses $\beta_{a}(\theta,\Delta)$ in $q_{a}^{(0)}(\Delta)$ and
+$q_{a}^{(1)}(\Delta)$\@. Self-consistent solutions for these are obtained 
+by imposing $q_{a}^{(0)}(\Delta)=\frac{1}{2\pi}\int_0^{2\pi}\!d\phi\,
+q_{a}(\theta,\Delta)$ and $q_{a}^{(1)}(\Delta)=\frac{1}{\pi}
+\int_0^{2\pi}\!d\phi\,q_{a}(\theta,\Delta)\cos \theta$ where 
+$q_{a}(\theta,\Delta)$ is given by Eqn.~(\ref{qA:eq}).
+
+Extending these results to the case where the feedforward activity, $m_0$, is 
+also changed is straightforward:
+The population averaged input $u_a$ and input variance $\alpha_a$ are now
+functions of $m_0$ and $\theta$, and are calculated as before. 
+For the correlations we have to consider 2 stimuli specified by variables
+($m_0^+$,$\theta+\Delta$) and ($m_0^-$,$\theta-\Delta$) respectively.  
+The correlations in the total input are denoted by 
+$\beta_a(m_0^+,m_0^-,\theta,\Delta)$, while for the correlations in the 
+activity we write $q_a(m_0^+,m_0^-,\theta,\Delta)$\@.
+The corelation $\beta_a$ can be written as
+$\beta_a(m_0^+,m_0^-,\theta,\Delta)=\sum_{k=0}^2
+\beta_a^{(k)}(m_0^+,m_0^-,\Delta)\cos k\theta$ with
+\begin{eqnarray}
+\beta_a^{(0)}(m_0^+,m_0^-,\Delta) & = &
+\frac{J_{a0}^2}{c}m_0^+m_0^-\left[1+\frac{\mu^2}{2}\cos2\Delta\right]+ 
+\nonumber \\
+ & & \makebox[0.2in]{}+
+\sum_{b=E,I}J_{ab}^2q_b^{(0)}(m_0^+,m_0^-,\Delta) \nonumber \\
+\beta_a^{(1)}(m_0^+,m_0^-,\Delta) & = &
+\frac{2J_{a0}^2}{c}m_0^+m_0^-\mu\zeta_A\cos\Delta+
+\nonumber \\
+ & & \makebox[0.2in]{}+
+\sum_{b=E,I}p_{ab}J_{ab}^2q_b^{(0)}(m_0^+,m_0^-,\Delta) \nonumber \\
+\beta_a^{(0)}(m_0^+,m_0^-,\Delta) & = &
+\frac{J_{a0}^2}{2c}m_0^+m_0^-\mu^2\zeta_A^2,
+\end{eqnarray}
+where 
+$q_a^{(k)}(m_0^+,m_0^-,\Delta)$ is the $k$th Fourier moment in $\theta$
+of $q_a(m_0^+,m_0^-,\theta,\Delta)$\@. $q_a$ is still given by
+Eqn.~(\ref{qA:eq}), except that now $u_a^\pm=u_a(m_0^\pm,\theta\pm\Delta)$,
+$\alpha_a^\pm=\alpha_a(m_0^\pm,\theta\pm\Delta)$ and 
+$\beta_a=\beta_a(m_0^+,m_0^-,\theta,\Delta)$\@.
+A self-consistency requirement equivalent to that given above for 
+$m_0^\pm=m_0$  determines $\beta_a$.
+
+\subsection{Symmetries of the Solution}
+The connection probabilities are even functions of the difference in 
+positions, $\phi_i^a-\phi_j^a$ and the external input is 
+symmetric in $\theta-\phi_i^a$\@. This implies that 
+$\beta_{a}(m_0,m_0^\prime,\theta,\Delta)=
+\beta_{a}(m_0,m_0^\prime,-\theta,-\Delta)$.
+As shown above, $\beta_{a}(m_0,m_0^\prime,\theta,\Delta)=
+\beta_{a}(m_0,m_0^\prime,-\theta,\Delta)$\@. Together these two symmetries 
+also imply that $\beta_{a}(m_0,m_0^\prime,\theta,\Delta)=
+\beta_{a}(m_0,m_0^\prime,\theta,-\Delta)$\@. Furthermore, under the 
+transformation $(\theta,\Delta)\rightarrow (\theta+\pi,\Delta-\pi)$ the two
+input orientations, $\theta_1=\theta+\Delta$ and $\theta_2=\theta-\Delta$, 
+transform to $\theta_1 \rightarrow \theta_1$ and 
+$\theta_2\rightarrow\theta_2+2\pi=\theta_2$\@. Thus we also have that 
+$\beta_{a}(m_0,m_0^\prime,\theta,\Delta)=
+\beta_{a}(m_0,m_0^\prime,\theta+\pi,\Delta-\pi)$\@. Finally, if we make the
+change, $(m_0,\theta)\rightarrow(m_0^\prime,\theta^\prime)$ and
+ 
+$(m_0^\prime,\theta^\prime) \rightarrow (m_0,\theta)$, the correlations are not 
+changed either. Thus $\beta_{a}(m_0,m_0^\prime,\theta,\Delta)=
+\beta_{a}(m_0^\prime,m_0,\theta,-\Delta)$\@.
+
+Taking these symmetries into account we can write 
+$\beta_{a}(m_0,m_0^\prime,\theta,\Delta)=\beta_{a}^{(0)}
+(m_0,m_0^\prime,\Delta)+\beta_{a}^{(1)}(m_0,m_0^\prime,\Delta)\cos \theta$ as
+\begin{eqnarray}
+\lefteqn{\beta_{a}(m_0,m_0^\prime,\theta,\Delta)= }\nonumber \\
+& & \sum_{n=0}^\infty \beta_{a}^{(0,2n)}(m_0,m_0^\prime)\cos 2n \Delta+
+\nonumber \\
+& & \mbox{}+\sum_{n=0}^\infty 
+\beta_{a}^{(1,2n+1)}(m_0,m_0^\prime)\cos \theta\cos (2n+1) \Delta+
+\nonumber \\
+& & \mbox{}+\beta_{a}^{(2,0)}(m_0,m_0^\prime)\cos 2\theta,
+\end{eqnarray}
+where $\beta_{a}^{(0,n)}$ and $\beta_{a}^{(1,n)}$ are the $n$th Fourier
+components in $\Delta$ of $\beta_{a}^{(0)}$ and $\beta_{a}^{(1)}$
+respectively\@. Note that due to the symmetry we also have that
+$\beta^{(n,m)}(m_0,m_0^\prime)=
+\beta^{(n,m)}(m_0^\prime,m_0)$\@.
+
+\subsection{The solution in the cases without map}
+So far we have considered the solution in the general case. What does this
+imply for the network without a map ($\zeta_A=0$) and the case with a map?
+
+When there is no map, 
+$m_A^{(1)}=0$ and therefore, from Eqn.~(\ref{alAB:eq}) and 
+either Eqn.~(\ref{alA0:eq}) or Eqn.~(\ref{alA0a}) that
+$\alpha_A^{(1)}=\alpha_a^{(2)}=0$\@. Using Eqn.~(\ref{eq:uA}), one sees that
+his implies that $u_A^{(1)}=0$\@. If we now consider Eqns.~(\ref{qA:eq}) and 
+(\ref{betaA:eq}) we see that the fact that $u_A$ and $\alpha_A$ do not depend 
+on $\theta$ implies that $q_A^{(1)}(\Delta)=\beta_A^{(1)}(\Delta)=0$\@. 
+Therefore, $q_A$ and $\beta_A$ do not depend on $\theta$, but only 
+on $\Delta$\@. Notice furthermore
+that the factors $p_{ab}$, which determines how strongly the probability of 
+the feedback connections is modulated with distance, only enters into the 
+expressions for the modulation with $\theta$ of $u_A$, $m_A$, %\alpha_a$,
+$q_A$ and $\beta_A$\@. Since these are all 0 when $\zeta_A=0$, in a network 
+without functional map the solution is independent of $p_{ab}$\@.
+
+When there is a map, none of these simplifications apply. It is 
+however worth noting that in this case, since $m_A^{(0)}$ and $m_A^{(1)}$
+both grow proportionally with $m_0$, their ratio in independent of $m_0$\@.
+This means that the Circular Variance (\CircVar, see below) of the population
+averaged response, which satisfies $\CircVar=1-m_A^{(1)}/m_a^{(0)}$, is 
+independent of contrast.
+
