@@ -1,0 +1,89 @@
+\subsection{Symmetry breaking: Bump solution} 
+
+\subsubsection{When  $m_0^{(1)} = 0$}
+
+Mean input, \\
+\begin{eqnarray}
+u_A(\phi) :=&& \lim_{N \rightarrow \infty} \PopAvgSqr{\PopAvg{u_A^i(\phi, t)}{t}}{\delta \phi}\nonumber \\
+=&& u_A^{(0)} + u_A^{(1)} \cos(2 \phi)  \\
+u_A^{(0)} =&& \sqrt{K} \left[c_{FF} J_{A0} m_0^{(0)} + \sum_B J_{AB} m_B^{(0)} \right] - 1\label{ue0equation} \\
+u_E^{(1)} =&& p \; J_{EE}\; m_E^{(1)} \label{ue1} \\
+u_I^{(1)} =&& 0 \label{ui1}
+\end{eqnarray}
+
+Variance of the input,\\
+\begin{eqnarray}
+\alpha_A :=&& \lim_{N \rightarrow \infty} \PopAvgDPhi{\PopAvg{(u_A^i(\phi, t))^2}{t}} - \PopAvgDPhi{\PopAvg{(u_A^i(\phi, t))}{t}}^2\nonumber  \\
+=&& c_{FF} J_{A0}^2 m_0^{(0)} + \sum_B J_{AB}^2 m_B^{(0)} \label{alphaE}
+\end{eqnarray}
+
+Evolution of mean rates is given by,\\
+\begin{equation}
+\tau_A \frac{d}{dt} m_A(\phi, t) = -m_A(\phi, t) + H\left( \frac{-u_A(\phi, t)}{\sqrt{\alpha_A}} \right)
+\end{equation}
+\\
+
+At the fixed point the mean activity is completely described by, \\
+% \begin{eqnarray}
+% m_E^{(0)} =&& \frac{1}{\pi} \int_0^\pi d\phi \; H\left( \frac{1 - u_E^{(0)} - u_E^{(1)} \cos(2 \phi)}{\sqrt{\alpha_A}} \right) \label{me0}\\
+% m_E^{(1)} =&& \frac{2}{\pi} \int_0^\pi d\phi \; H\left( \frac{1 - u_E^{(0)} - u_E^{(1)} \cos(2 \phi)}{\sqrt{\alpha_A}}  \right) \cos(2 \phi) \label{me1}
+% \end{eqnarray}
+% \\
+\begin{eqnarray}
+m_E^{(0)} =&& \frac{1}{\pi} \int_0^\pi d\phi \; H\left( \frac{-u_E(\phi)}{\sqrt{\alpha_A}} \right) \label{me0}\\
+m_E^{(1)} =&& \frac{2}{\pi} \int_0^\pi d\phi \; H\left( \frac{-u_E(\phi)}{\sqrt{\alpha_A}}  \right) \cos(2 \phi) \label{me1}
+\end{eqnarray}
+\\
+
+
+$m_E^{(0)}$ and $m_I^{(0)}$ are given by requiring balance in eq. [\ref{ue0equation}], $m_I^{(1)} = 0$, because Eq.[\ref{ui1}]. \\
+
+\subsubsection{Behavior of $m_E^{(0)}$ and $m_E^{(1)}$ as $p$ is varied}
+In the limit $K \rightarrow \infty$ limit, $m_E^{(0)}$ will remain unchanged as $p$ is varied.\\
+
+Expanding $H(\cdot)$ at the fixed poing of Eq. \ref{me1} for small $m_E^{(1)}$ and integrating,
+
+
+\begin{eqnarray}
+m_E^{(1)} \, F(p) + \left( m_E^{(1)} \right)^3 \,  G(p) + \mathcal{O} \left(\left( m_E^{(1)} \right)^5 \right) = 0
+\end{eqnarray}
+
+If, $\exists p_c: F(p_{c}) = 0$, then $\forall p>p_c$, $m_E^{(1)} \neq 0$ solutions are stable if $\sign (G(p_c)) = -1 $  
+
+\begin{eqnarray}
+%p_c = 3.404
+p_{c} &= \frac{ - \sqrt{\alpha_E^{\star (0)}}}{J_{EE} H^{\prime}(h^{\star})}; \,\,\,\, h^{\star} = \frac{- u_E^{\star (0)}}{\sqrt{\alpha_E^{\star (0)}}} 
+\end{eqnarray}
+
+\subsubsection{Stability of the bump solution}
+When $K \rightarrow \infty$, 
+\begin{eqnarray}
+G(p_c)  =&& -\frac{p^3_c J_{EE}^{3}}{\left( \alpha_E^(0) \right)^{\frac{3}{2}}} \left[ \frac{1}{8} H^{\prime \prime \prime} (A_0) - \frac{1}{4} \frac{\left( H^{\prime \prime} (A_0)\right)^2 }{H^{\prime}(A_0)} \right] \\
+=&& - \frac{e^{\frac{-A^2_0}{2}}}{\sqrt{2 \pi}} \frac{p^3_c J_{EE}^{3}}{\left( \alpha_E^(0) \right)^{\frac{3}{2}}}  \left[1 + A^2_0 \right] \\
+\Rightarrow&& \sign(G(p_c)) = -1
+\end{eqnarray}
+where, $A_{0} = H^{-1}(m_E^{(0)}))$
+
+\subsubsection{Dynamics of the phase}
+
+\begin{itemize}
+  \item The final position of the bump depends on the initial conditions
+  \item For a finite network, there is a discrete number of fixed points. The drift term approaches zero as $N \rightarrow \infty$
+\end{itemize}
+
+
+
+\subsubsection{When  $\gamma, m_0^{(1)} \neq 0$} 
+
+\paragraph{OSI distribution}
+\input{osi}
+
+\paragraph{Virtual rotation}
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:

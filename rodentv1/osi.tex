@@ -15,26 +15,26 @@ where,\\
 z_i^{(n)} = \frac{1}{\pi} \int_0^{\pi} d \phi \,  m^i(\phi) \, \exp (2 \, n \,  j \, \phi)) \,\,\,\,; \,\,\,\, j = \sqrt{-1}
 \end{equation}
 % $$z_i^{(n)} = \frac{(1 - \delta(n - 1))}{\pi} \int_0^{\pi} d \phi \,  m^i(\phi) \exp (2 j \phi)) \,\,\,\,; \,\,\,\, j = \sqrt{-1} $$
-\begin{eqnarray}
-m_A^i(\phi) =&& m_A(\phi, x_i)\\
-=&& H\left(\frac{1 - u_A(\phi) - \sqrt{\beta_A(\phi, 0)} x_i}{\sqrt{\alpha_A - \beta_A(\phi, 0)}} \right)
-\end{eqnarray}
-where,
-\begin{eqnarray}
-x_i \sim&& \mathcal{N}(0, 1)\nonumber \\
-\alpha_A =&& c_{FF} J_{A0}^2 m_0^{(0)} +  \sum_{B = \lbrace E, I\rbrace}  J_{AB}^2 m_B^{(0)}\\ %, \,\, A, B \in \lbrace E, I \rbrace  \\
-\beta_A(\phi, \Delta) =&& \beta^{(0)}_A(\Delta) + \beta^{(1)}_A(\Delta)  \cos(2 \phi)\\
-\beta_A^{(0)}(\Delta) =&& c_{FF} (J_{A0})^2 q_0^{(0)} (\Delta)\nonumber \\ 
-&&+ \sum_B  \left(J_{AB}\right)^2 q_B^{(0)}(\Delta) \\
-\beta_A^{(1)}(\Delta) =&& c_{FF} (J_{A0})^2 \, \gamma \, q_0^{(1)} (\Delta)\nonumber \\
-&&+ \sum_B  p_{AB} \left(J_{AB}\right)^2  q_B^{(1)}(\Delta)
-\end{eqnarray}
-The FF population ($m^i_0$), is assumed to have all neurons with homogeneous tuning curves given by, $m^i_0(\phi) = m^{(0)}_0 + m^{(1)}_0 \cos(2 \phi)$, which gives
-\begin{eqnarray}
-q^{(0)}_0 (\Delta) =&&(\mZero)^2 + \frac{1}{2} (\mOne)^2 \cos(4 \, \Delta) \\
-q^{(1)}_0 (\Delta) =&& 2 \, \mZero \, \mOne \cos(4 \, \Delta) 
-\end{eqnarray}
-and, \\
+% \begin{eqnarray}
+% m_A^i(\phi) =&& m_A(\phi, x_i)\\
+% =&& H\left(\frac{1 - u_A(\phi) - \sqrt{\beta_A(\phi, 0)} x_i}{\sqrt{\alpha_A - \beta_A(\phi, 0)}} \right)
+% \end{eqnarray}
+% where,
+% \begin{eqnarray}
+% x_i \sim&& \mathcal{N}(0, 1)\nonumber \\
+% \alpha_A =&& c_{FF} J_{A0}^2 m_0^{(0)} +  \sum_{B = \lbrace E, I\rbrace}  J_{AB}^2 m_B^{(0)}\\ %, \,\, A, B \in \lbrace E, I \rbrace  \\
+% \beta_A(\phi, \Delta) =&& \beta^{(0)}_A(\Delta) + \beta^{(1)}_A(\Delta)  \cos(2 \phi)\\
+% \beta_A^{(0)}(\Delta) =&& c_{FF} (J_{A0})^2 q_0^{(0)} (\Delta)\nonumber \\ 
+% &&+ \sum_B  \left(J_{AB}\right)^2 q_B^{(0)}(\Delta) \\
+% \beta_A^{(1)}(\Delta) =&& c_{FF} (J_{A0})^2 \, \gamma \, q_0^{(1)} (\Delta)\nonumber \\
+% &&+ \sum_B  p_{AB} \left(J_{AB}\right)^2  q_B^{(1)}(\Delta)
+% \end{eqnarray}
+% The FF population ($m^i_0$), is assumed to have all neurons with homogeneous tuning curves given by, $m^i_0(\phi) = m^{(0)}_0 + m^{(1)}_0 \cos(2 \phi)$, which gives
+% \begin{eqnarray}
+% q^{(0)}_0 (\Delta) =&&(\mZero)^2 + \frac{1}{2} (\mOne)^2 \cos(4 \, \Delta) \\
+% q^{(1)}_0 (\Delta) =&& 2 \, \mZero \, \mOne \cos(4 \, \Delta) 
+% \end{eqnarray}
+% and, \\
 
 
 % \begin{widetext}
@@ -54,18 +54,18 @@ and, \\
 % \end{equation}
 % \end{widetext}
 
-\begin{widetext}
-\begin{equation}
-q^{(n)}_A (\Delta) = \frac{1 - \Theta(1 - n)}{\pi} \int_0^{\pi} d \phi \,  H\left(\frac{1 - u(\phi) - \sqrt{\beta(\phi, \Delta)} x_i}{\sqrt{\alpha - \beta(\phi, \Delta)}} \right)  H\left(\frac{1 - u(\phi) - \sqrt{\beta(\phi, - \Delta)} x_i}{\sqrt{\alpha - \beta(\phi, - \Delta)}} \right) \cos(2 n \phi)
-\end{equation}
-\end{widetext}
+% \begin{widetext}
+% \begin{equation}
+% q^{(n)}_A (\Delta) = \frac{1 - \Theta(1 - n)}{\pi} \int_0^{\pi} d \phi \,  H\left(\frac{1 - u(\phi) - \sqrt{\beta(\phi, \Delta)} x_i}{\sqrt{\alpha - \beta(\phi, \Delta)}} \right)  H\left(\frac{1 - u(\phi) - \sqrt{\beta(\phi, - \Delta)} x_i}{\sqrt{\alpha - \beta(\phi, - \Delta)}} \right) \cos(2 n \phi)
+% \end{equation}
+% \end{widetext}
 
-The OSI distribution is defined as,
+% The OSI distribution is defined as,
 
-\begin{eqnarray}
-\rho_{\mathrm{\tiny{OSI}}} (s) =&& \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} dx \; \exp(-\frac{x^2}{2}) \, \delta(s - s(x))
-\end{eqnarray}
-$s(x)$ is given by Eq.[\ref{defosi}]
+% \begin{eqnarray}
+% \rho_{\mathrm{\tiny{OSI}}} (s) =&& \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} dx \; \exp(-\frac{x^2}{2}) \, \delta(s - s(x))
+% \end{eqnarray}
+% $s(x)$ is given by Eq.[\ref{defosi}]
 
 %%% Local Variables:
 %%% mode: latex

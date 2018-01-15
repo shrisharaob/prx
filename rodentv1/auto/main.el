@@ -8,30 +8,18 @@
     "notation"
     "./rndnw/model"
     "./rndnw/analysis"
-    "osi"
+    "./specific_connections"
+    "./simulations"
+    "./appendix2"
     "revtex4-1"
     "revtex4-110"
     "graphicx"
     "dcolumn"
     "bm"
     "lipsum")
-   (TeX-add-symbols
-    "mEOne"
-    "mEZero"
-    "mIZero")
    (LaTeX-add-labels
     "sec:level1"
-    "sec:level2"
-    "sec:citeref"
-    "ue0equation"
-    "ue1"
-    "ui1"
-    "alphaE"
-    "me0"
-    "me1"
-    "me0Sol"
-    "me1Sol"
-    "mi0Sol")
+    "sec:level2")
    (LaTeX-add-bibliographies
     "apssamp")))
 

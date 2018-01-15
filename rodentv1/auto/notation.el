@@ -10,8 +10,20 @@
     "Hb"
     "Hx"
     "Hz"
+    "Hzmone"
     "CZero"
     "COne"
     "CTwo"
-    "sign")))
+    "sign"
+    "uEOne"
+    "uOne"
+    "uEZero"
+    "mEOne"
+    "mEZero"
+    "mIZero"
+    "costh"
+    "Hp"
+    "Hpp"
+    "Hppp"
+    "defeql")))
 

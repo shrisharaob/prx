@@ -1,0 +1,245 @@
+\message{ !name(main.tex)}% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.1 distribution.
+%   Version 4.1r of REVTeX, August 2010
+%
+%   Copyright (c) 2009, 2010 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.1
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%showpacs,preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-1}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage{hyperref}% add hypertext capabilities
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+%\usepackage[showframe,%Uncomment any one of the following lines to test 
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
+
+\usepackage{lipsum}
+\input{notation}
+
+
+\begin{document}
+
+\message{ !name(specific_connections.tex) !offset(-64) }
+\section{Adding specific connections}
+
+Let us consider a two population recurrent network of binary neurons where a neuron $i$ in population $A$ has PO $\phi_A^i$. The recurrent network receives external input from FF population which is assumed to consist of neurons with symmetric tuning curves given by, $m^i_0(\theta) = m^{(0)}_0 + \sum_{n=1}^{\infty} m^{(n)}_0 \cos 2n (\theta - \theta_0^i)$, which produces an effective FF input, $u_A^i(\theta) =  J_{A0}  [\sqrt{K} m_0^{(0)} + \sum_{n=1}^{\infty} m^{(n)}_0  z_n^i \cos2 n (\theta - \phi_A^i(n))]$. Making a further assumption that the higher moments are negligible (i.e $m^{(1)}_0 >> m^{(n)}, \forall n > 1$), the effective FF input can be written as $u_A^i(\theta) =  J_{A0}  [\sqrt{K} m_0^{(0)} + m_0^{(1)}z_i \cos2 (\theta - \phi_A^i)]$. Where,  $z_i \sim z e^{-\frac{z^2}{2}}$ and $\phi_A^i \sim \mathcal{U}(0, \pi)$. 
+\subsection{Network Architecture}
+Starting with a random network $\hat{C}$, we will introduce a small number of PO specific connections E-to-E connections. The resulting network $C$ has $\mathcal{O}(\sqrt{K})$ PO specific E-to-E connections out of $K$. For large K ratio of specific to non-specific connections approaches zero as $\frac{1}{\sqrt{K}}$. The network $\hat{C} $ has probability of connections given by, 
+\begin{eqnarray}
+P(\hat{C}_{EE}^{ij} = 1) =&& \frac{K - 2 \kappa \, \sqrt{K}}{N_E}  \\
+P(\hat{C}_{EI}^{ij} = 1) =&& \frac{K}{N_I} \\
+P(\hat{C}_{IA}^{ij} = 1) =&& \frac{K}{N_A}; \,\, A \in {E, I} 
+\end{eqnarray}
+Assuming the wights $J_{AB}^{ij}$ are drawn from some arbitrary distribution $P_J$ with mean $J_{AB} = \left\langle J_{AB}^{ij} \right\rangle_{P_J}$ and finite variance of $J^2_{AB} = \left\langle \left( J_{AB}^{ij} \right)^2 \right\rangle_{P_J}$. \\
+Introducing a small number( i.e $ \mathcal{O} \left( \sqrt{K} \right)$) of specific connections of strength in the recurrent E-to-E connections such that, the probability of connections in new matrix $C$ is,
+\begin{eqnarray}
+P(C_{EE}^{ij} = 1 | \hat{C}_{EE}^{ij} = 0) =&&  \frac{2 \kappa  \sqrt{K}    }{N_E - K - 2 \kappa  \sqrt{K} } \nonumber \\
+\times&& \left[ 1 + \cos2(\phi_E^i - \phi_E^j) \right] \,\,\,\, \\
+P(C_{EE}^{ij} = 1 | \hat{C}_{EE}^{ij} = 1) =&& 1  \\
+\Rightarrow P(C_{EE}^{ij} = 1) = P(C_{EE}^{ij} =&& 1 | \hat{C}_{EE}^{ij} = 0) P(\hat{C}_{EE}^{ij} = 0) \nonumber \\
++ P(C_{EE}^{ij} =&& 1 | \hat{C}_{EE}^{ij} = 1) P(\hat{C}_{EE}^{ij} = 1) \nonumber  \\
+= \frac{K}{N_E} \left[1 + \right.&&  \left. \frac{2 \kappa }{\sqrt{K}} \cos 2(\phi_E^i - \phi_E^j) \right]
+\end{eqnarray}
+Thus, constructing a matrix with this rule results in an Erdos-Renji network with an average in degree of $K$. Furthermore, the E-to-E connections have on average $\kappa \sqrt{K}$ PO specific connections out of the $K$ inbound connections. 
+\subsection{Time averaged input statistics}
+The time averaged input $u_A^{i} (\theta)$ to neuron $(i, A)$ at stimulus angle $\theta$ is given by, 
+\begin{eqnarray}
+u_E^{i} (\theta) =&& u^{(0)}_E + \sqrt{\beta_E - \beta_{E0}^{(1)}} x_i +  \sqrt{\beta_{E0}^{(1)}} z_i \cos 2 (\theta - \phi_E^i) \,\,\,\, \,\,\,\,\nonumber \\
++&& \kappa J_{EE} m_E^{(1)} \cos 2 ( \theta  - \phi_E^i) \\
+=&& \overline{u}_E(\theta, x_i, \phi_E^i, \kappa) +  \sqrt{\beta_{E0}^{(1)}} z_i \cos 2 (\theta - \phi_E^i) \\
+u_I^{i} (\theta) =&& u^{(0)}_I + \sqrt{\beta_I - \beta_{I0}^{(1)}} x_i +  \sqrt{\beta_{I0}^{(1)}} z_i \cos 2 (\theta - \Delta_I^i) \\
+=&& \overline{u}_I(\theta, x_i, \phi_I^i) +  \sqrt{\beta_{I0}^{(1)}} z_i \cos 2 (\theta - \phi_I^i)
+\end{eqnarray}
+Where, $x_i \sim \mathcal{N}(0, 1)$. 
+% Where, 
+% \begin{eqnarray}
+% \alpha_{A} =&& \sum_{B \in \lbrace 0, E, I \rbrace} J_{AB}^2 m_B^{(0)} \\
+% \beta_{A}(\Delta) =&& \sum_{B \in \lbrace E, I \rbrace}  \left(J_{AB}\right)^2 q_B^{(0)}(\Delta) \\
+% \beta_{A0} (\Delta) =&& \beta_{A0}^{(0)} + \beta_{A0}^{(1)} \nonumber \\
+% =&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] \\
+% q_A (\theta, \Delta) =&& \int \mathcal{D} x \,  m_A(x, \theta + \Delta)  m_A(x, \theta - \Delta) 
+% \end{eqnarray}
+Given the time averaged input, the activity of a neuron at angle theta can be written as, 
+\begin{eqnarray}
+&&m_A^i(\theta) = m_A(x_i, \theta) \nonumber \\
+=&& \int_{0}^{\infty} \mathtt{d} z\,  z \mathtt{e}^{-\frac{z^2}{2}} H\left( \frac{-u_A^i(\theta)}{\sqrt{\tilde{\alpha}_A }} \right)  \\
+=&& H\left( \frac{-\overline{u}_A }{\sqrt{\tilde{\alpha}_A }}  \right) + \sqrt{\frac{\beta_{A0}^{(1)} }{  \tilde{\alpha}_A + \beta_{A0}^{(1)} \cos^2 2 (\theta - \phi_A^i) }} \nonumber \\ 
+\times&&  \exp \left( \frac{\left( \overline{u}_A \right)^2  }{ 2 \tilde{\alpha}_A} \left[ 1 + \frac{\beta_{A0}^{(1)} }{ \tilde{\alpha}_A + \beta_{A0}^{(1)} \cos^2 2 (\theta - \phi_A^i)  } \cos^2 2 (\theta - \phi_A^i) \right] \right) \nonumber \\
+\times&& \left[ H \left( - \frac{ \sqrt{\beta_A^{(1)} } \overline{u}_A \cos 2 (\theta - \phi_A^i)} {  \tilde{\alpha}_A + \beta_{A0}^{(1)} \cos^2 2 (\theta - \phi_A^i) } \right) - 1 \right] \cos2(\theta - \phi_A^i) \label{mAiofTheta} 
+\end{eqnarray}
+
+\begin{eqnarray}
+\tilde{\alpha}_A =&& \alpha_A - \beta_A(\Delta = 0) \\ % - \beta_{A0}^{(0)} - \beta_{A0}^{(1)} \\
+\alpha_{A} =&& \sum_{B \in \lbrace 0, E, I \rbrace} J_{AB}^2 m_B^{(0)} \\
+\beta_{A}(\Delta) =&&  \beta_{A0} (\Delta) + \sum_{B \in \lbrace E, I \rbrace}  \left(J_{AB}\right)^2 q_B^{(0)}(\Delta) \\
+\beta_{A0} (\Delta) =&& \beta_{A0}^{(0)} + \beta_{A0}^{(1)} \nonumber \\
+=&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] \\
+q_A (\theta, \Delta) =&& \int \mathcal{D} x \,  m_A(x, \theta + \Delta)  m_A(x, \theta - \Delta) 
+\end{eqnarray}
+$m_A(x, \theta)$ is given by Eq. \ref{mAiofTheta}
+
+\subsection{Average population activities}
+
+The population averaged inputs $u_A(\theta) = \left\langle u_A^i(\theta) \right\rangle_{i}$ is given by, 
+\begin{eqnarray}
+u_E(\theta) =&& u^{(0)}_E + \frac{1}{\sqrt{2}} J_{E0} m_0^{(1)} \cos 2 \theta \nonumber \\
+\qquad&& \qquad+ \kappa J_{EE} m_E^{(1)} \cos 2 \theta \\
+u_I(\theta) =&& u^{(0)}_I + \frac{1}{\sqrt{2}} J_{I0} m_0^{(1)} \cos 2 \theta 
+\end{eqnarray}
+
+\begin{widetext}
+\begin{eqnarray}
+m_E^{(0)} =&& \frac{1}{\pi} \int \mathtt{d} \theta H \left( \frac{-u^{(0)}_E - \frac{1}{\sqrt{2}} J_{E0} m_0^{(1)} \cos 2 \theta - \kappa  J_{EE} m_E^{(1)} \cos 2 \theta}{\sqrt{\alpha_E} } \right)  \label{me0} \\
+m_E^{(1)} =&& \frac{2}{\pi} \int \mathtt{d} \theta H \left( \frac{-u^{(0)}_E - \frac{1}{\sqrt{2}} J_{E0} m_0^{(1)} \cos 2 \theta - \kappa  J_{EE} m_E^{(1)} \cos 2 \theta}{\sqrt{\alpha_E} } \right) \cos 2 \theta  \label{me1} \\
+m_I^{(0)} =&& \frac{1}{\pi} \int \mathtt{d} \theta H \left( \frac{-u^{(0)}_I - \frac{1}{\sqrt{2}} J_{I0} m_0^{(1)} \cos 2 \theta}{\sqrt{\alpha_I} } \right)  \label{mi0} \\
+m_I^{(1)} =&& \frac{2}{\pi} \int \mathtt{d} \theta H \left( \frac{-u^{(0)}_I - \frac{1}{\sqrt{2}} J_{I0} m_0^{(1)} \cos 2 \theta }{\sqrt{\alpha_I} } \right) \cos 2 \theta  \label{mi1}
+\end{eqnarray}
+\end{widetext}
+
+% \begin{eqnarray}
+% \alpha_{A} =&& \sum_{B \in \lbrace 0, E, I \rbrace} J_{AB}^2 m_B^{(0)} \\
+% \beta_{A}(\Delta) =&& \sum_{B \in \lbrace E, I \rbrace}  \left(J_{AB}\right)^2 q_B^{(0)}(\Delta) \\
+% \beta_{A0} (\Delta) =&& \beta_{A0}^{(0)} + \beta_{A0}^{(1)} \nonumber \\
+% =&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] \\
+% q_A (\theta, \Delta) =&& \int \mathcal{D} x \,  m_A(x, \theta + \Delta)  m_A(x, \theta - \Delta) 
+% \end{eqnarray}
+
+
+
+\subsection{Symmetry breaking: Bump solution} 
+
+\subsubsection{When  $m_0^{(1)} = 0$}
+
+Mean input, \\
+\begin{eqnarray}
+u_E(\theta) =&& u^{(0)}_E + \kappa J_{EE} m_E^{(1)} \cos 2 \theta \\
+u_I(\theta) =&& u^{(0)}_I \\
+u^{(0)}_A =&& \sqrt{K} \sum_{B \in \lbrace 0, E, I\rbrace} J_{AB} m_B^{(0)}  - T_A\label{uaTeq} 
+\end{eqnarray}
+
+Variance of the input,\\
+\begin{eqnarray}
+\alpha_A =&& \sum_{B \in \lbrace 0, E, I\rbrace} J_{AB}^2 m_B^{(0)} \label{alphaE}
+\end{eqnarray}
+
+Evolution of mean rates is given by,\\
+\begin{equation}
+\tau_A \frac{d}{dt} m_A(\theta, t) = -m_A(\theta, t) + H\left( \frac{-u_A(\theta, t)}{\sqrt{\alpha_A}} \right)
+\end{equation}
+\\
+
+At the fixed point the mean activity is completely described by, \\
+% \begin{eqnarray}
+% m_E^{(0)} =&& \frac{1}{\pi} \int_0^\pi d\theta \; H\left( \frac{1 - u_E^{(0)} - u_E^{(1)} \cos(2 \theta)}{\sqrt{\alpha_A}} \right) \label{me0}\\
+% m_E^{(1)} =&& \frac{2}{\pi} \int_0^\pi d\theta \; H\left( \frac{1 - u_E^{(0)} - u_E^{(1)} \cos(2 \theta)}{\sqrt{\alpha_A}}  \right) \cos(2 \theta) \label{me1}
+% \end{eqnarray}
+% \\
+\begin{eqnarray}
+m_E^{(0)} =&& \frac{1}{\pi} \int_0^\pi d\theta \; H\left( \frac{-u_E(\theta)}{\sqrt{\alpha_A}} \right) \label{me0m10}\\
+m_E^{(1)} =&& \frac{2}{\pi} \int_0^\pi d\theta \; H\left( \frac{-u_E(\theta)}{\sqrt{\alpha_A}}  \right) \cos(2 \theta) \label{me1m10} \\
+m_I^{(0)} =&&  H\left( \frac{-u^{(0)}_I}{\sqrt{\alpha_I}} \right) \\
+m_I^{(1)} =&& 0 
+\end{eqnarray}
+$m_E^{(0)}$ and $m_I^{(0)}$ are fixed by requiring balance in eq. [\ref{uaTeq}], $m_I^{(1)} = 0$, because Eq.[\ref{ui1}]. 
+
+\subsubsection{Behavior of $m_E^{(0)}$ and $m_E^{(1)}$ as $\kappa$ is varied}
+In the limit $K \rightarrow \infty$ limit, $m_E^{(0)}$ will remain unchanged as $\kappa$ is varied.\\
+Expanding $H(\cdot)$ at the fixed point(Eq. \ref{me1}) for small $m_E^{(1)}$ and integrating,
+\begin{eqnarray}
+m_E^{(1)} \, F(\kappa) + \left( m_E^{(1)} \right)^3 \,  G(\kappa) + \mathcal{O} \left(\left( m_E^{(1)} \right)^5 \right) = 0
+\end{eqnarray}
+
+If, $\exists \kappa_c: F(\kappa_{c}) = 0$, then $\forall \kappa>\kappa_c$, $m_E^{(1)} \neq 0$ solutions are stable if $\sign (G(\kappa_c)) = -1 $  
+
+\begin{eqnarray}
+%p_c = 3.404
+\kappa_{c} &= \frac{ - \sqrt{\alpha_E^{\star (0)}}}{J_{EE} H^{\prime}(h^{\star})}; \,\,\,\, h^{\star} = \frac{- u_E^{\star (0)}}{\sqrt{\alpha_E^{\star (0)}}} 
+\end{eqnarray}
+
+\subsubsection*{Stability of the bump solution}
+When $K \rightarrow \infty$, 
+\begin{eqnarray}
+G(\kappa_c)  =&& -\frac{\kappa^3_c J_{EE}^{3}}{\left( \alpha_E^(0) \right)^{\frac{3}{2}}} \left[ \frac{1}{8} H^{\prime \prime \prime} (A_0) - \frac{1}{4} \frac{\left( H^{\prime \prime} (A_0)\right)^2 }{H^{\prime}(A_0)} \right] \\
+=&& - \frac{e^{\frac{-A^2_0}{2}}}{\sqrt{2 \pi}} \frac{\kappa^3_c J_{EE}^{3}}{\left( \alpha_E^(0) \right)^{\frac{3}{2}}}  \left[1 + A^2_0 \right] \\
+\Rightarrow&& \sign(G(\kappa_c)) = -1
+\end{eqnarray}
+where, $A_{0} = H^{-1}(m_E^{(0)}))$
+
+\subsubsection{Dynamics of the phase}
+
+\begin{itemize}
+  \item The final position of the bump depends on the initial conditions
+  \item For a finite network, there is a discrete number of fixed points. The drift term approaches zero as $N \rightarrow \infty$
+\end{itemize}
+
+
+
+% \subsubsection{When  $\gamma, m_0^{(1)} \neq 0$} 
+
+\paragraph{OSI distribution}
+\input{osi}
+
+\paragraph{Virtual rotation}
+
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:
+
+\message{ !name(main.tex) !offset(-72) }
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

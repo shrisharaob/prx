@@ -61,9 +61,6 @@
 
 \begin{document}
 
-
-
-
 \preprint{APS/123-QED}
 
 \title{Theory of orientation selectivity in random binary networks} 
@@ -137,170 +134,33 @@ use the optional argument of the \verb+\item+ command to give the category of ea
 \input{./rndnw/analysis}
 %\input{./rndnw/methods_binary} 
 
-\section{\label{sec:citeref} $\mathcal{O} (\sqrt{K}) $ specific connections}
+.\\
+\newpage
+.\\
+\newpage
 
-Recurrent connections, \\
-\begin{eqnarray}
-P_{AB}^{ij} \left(J_{AB}^{ij} \right.=&&\left. \frac{J_{AB}}{\sqrt{K}} \; \Bigg| \; \phi_A^i, \phi_B^j \right)\nonumber\\
-=&& \frac{K}{N_B}\left[ 1 + \frac{2 \; p_{AB}}{\sqrt{K}}\; \cos(2 \; ( \phi^i_A - \phi_B^j)) \right]
-%\phi_A^i = i \frac{\pi}{N_A},  \;\; 0 &&\leq p_E < \sqrt{K} 
-\end{eqnarray}
-\begin{eqnarray}
-\phi_A^i = i \frac{\pi}{N_A},  \;\; 0 \leq p_{AB} < \frac{\sqrt{K}}{2} \nonumber
-\end{eqnarray}
+\input{./specific_connections}
 
-Feed forward connections,
-\begin{eqnarray}
-P_{A0}^{ij} \left( J^{ij}_{A0} \right.=&&\left. \frac{J_{A0}}{\sqrt{K}} \; \Bigg| \; \phi_A^i, \phi_0^j \right)\nonumber \\
-=&& c_{FF} \frac{K}{N_{0}} \left[ 1 + \frac{2 \;\gamma_{AB}}{\sqrt{K}}\; \cos(2 \; ( \phi^i_A - \phi_0^j)) \right]
- \end{eqnarray}
-
-\begin{eqnarray}
- c_{FF} \in [0, 1], \,\,\,\,0 \leq \gamma_{AB} < \frac{\sqrt{K}}{2}, \,\,\,\, \phi_0^j = j \frac{\pi}{N_{0}}  \nonumber
-\end{eqnarray}
-We consider only specific connections in the recurrent excitatory connections and the FF projections to the excitatory population. Therefore we set, $p_{IB} = p_{EI} = 0$ and $\gamma_{IB} = \gamma_{EI}= 0$. (Henceforth, $p = p_{EE}, \; \gamma =  \gamma_{EE}$)\\
-\\
-
-\subsection{Symmetry breaking: Bump solution} 
-
-\subsubsection{When  $\gamma = 0$}
-
-Mean input, \\
-\begin{eqnarray}
-u_A(\phi) :=&& \lim_{N \rightarrow \infty} \PopAvgSqr{\PopAvg{u_A^i(\phi, t)}{t}}{\delta \phi}\nonumber \\
-=&& u_A^{(0)} + u_A^{(1)} \cos(2 \phi)  \\
-u_A^{(0)} =&& \sqrt{K} \left[c_{FF} J_{A0} m_0^{(0)} + \sum_B J_{AB} m_B^{(0)} \right] - 1\label{ue0equation} \\
-u_E^{(1)} =&& p \; J_{EE}\; m_E^{(1)} \label{ue1} \\
-u_I^{(1)} =&& 0 \label{ui1}
-\end{eqnarray}
-
-Variance of the input,\\
-\begin{eqnarray}
-\alpha_A :=&& \lim_{N \rightarrow \infty} \PopAvgDPhi{\PopAvg{(u_A^i(\phi, t))^2}{t}} - \PopAvgDPhi{\PopAvg{(u_A^i(\phi, t))}{t}}^2\nonumber  \\
-=&& c_{FF} J_{A0}^2 m_0^{(0)} + \sum_B J_{AB}^2 m_B^{(0)} \label{alphaE}
-\end{eqnarray}
-
-Evolution of mean rates is given by,\\
-\begin{equation}
-\tau_A \frac{d}{dt} m_A(\phi, t) = -m_A(\phi, t) + H\left( \frac{-u_A(\phi, t)}{\sqrt{\alpha_A}} \right)
-\end{equation}
-\\
-
-At the fixed point the mean activity is completely described by, \\
-% \begin{eqnarray}
-% m_E^{(0)} =&& \frac{1}{\pi} \int_0^\pi d\phi \; H\left( \frac{1 - u_E^{(0)} - u_E^{(1)} \cos(2 \phi)}{\sqrt{\alpha_A}} \right) \label{me0}\\
-% m_E^{(1)} =&& \frac{2}{\pi} \int_0^\pi d\phi \; H\left( \frac{1 - u_E^{(0)} - u_E^{(1)} \cos(2 \phi)}{\sqrt{\alpha_A}}  \right) \cos(2 \phi) \label{me1}
-% \end{eqnarray}
-% \\
-\begin{eqnarray}
-m_E^{(0)} =&& \frac{1}{\pi} \int_0^\pi d\phi \; H\left( \frac{-u_E(\phi)}{\sqrt{\alpha_A}} \right) \label{me0}\\
-m_E^{(1)} =&& \frac{2}{\pi} \int_0^\pi d\phi \; H\left( \frac{-u_E(\phi)}{\sqrt{\alpha_A}}  \right) \cos(2 \phi) \label{me1}
-\end{eqnarray}
-\\
-
-
-$m_E^{(0)}$ and $m_I^{(0)}$ are given by requiring balance in eq. [\ref{ue0equation}], $m_I^{(1)} = 0$, because Eq.[\ref{ui1}]. \\
-
-\subsubsection{Behavior of $m_E^{(0)}$ and $m_E^{(1)}$ as $p$ is varied}
-In the limit $K \rightarrow \infty$ limit, $m_E^{(0)}$ will remain unchanged as $p$ is varied.\\
-
-Expanding $H(\cdot)$ at the fixed poing of Eq. \ref{me1} for small $m_E^{(1)}$ and integrating,
-
-
-\begin{eqnarray}
-m_E^{(1)} \, F(p) + \left( m_E^{(1)} \right)^3 \,  G(p) + \mathcal{O} \left(\left( m_E^{(1)} \right)^5 \right) = 0
-\end{eqnarray}
-
-If, $\exists p_c: F(p_{c}) = 0$, then $\forall p>p_c$, $m_E^{(1)} \neq 0$ solutions are stable if $\sign (G(p_c)) = -1 $  
-
-\begin{eqnarray}
-%p_c = 3.404
-p_{c} &= \frac{ - \sqrt{\alpha_E^{\star (0)}}}{J_{EE} H^{\prime}(h^{\star})}; \,\,\,\, h^{\star} = \frac{- u_E^{\star (0)}}{\sqrt{\alpha_E^{\star (0)}}} 
-\end{eqnarray}
-
-\subsubsection{Stability of the bump solution}
-When $K \rightarrow \infty$, 
-\begin{eqnarray}
-G(p_c)  =&& -\frac{p^3_c J_{EE}^{3}}{\left( \alpha_E^(0) \right)^{\frac{3}{2}}} \left[ \frac{1}{8} H^{\prime \prime \prime} (A_0) - \frac{1}{4} \frac{\left( H^{\prime \prime} (A_0)\right)^2 }{H^{\prime}(A_0)} \right] \\
-=&& - \frac{e^{\frac{-A^2_0}{2}}}{\sqrt{2 \pi}} \frac{p^3_c J_{EE}^{3}}{\left( \alpha_E^(0) \right)^{\frac{3}{2}}}  \left[1 + A^2_0 \right] \\
-\Rightarrow&& \sign(G(p_c)) = -1
-\end{eqnarray}
-where, $A_{0} = H^{-1}(m_E^{(0)}))$
-
-\subsubsection{Dynamics of the phase}
-
-\begin{itemize}
-  \item The final position of the bump depends on the initial conditions
-  \item For a finite network, there is a discrete number of fixed points. The drift term approaches zero as $N \rightarrow \infty$
-\end{itemize}
-
-
-
-\subsubsection{When  $\gamma, m_0^{(1)} \neq 0$} 
-
-\paragraph{OSI distribution}
-\input{osi}
-
-\paragraph{Virtual rotation}
-
-
-\subsubsection{Simulations}
-\newcommand{\mEOne}{m_E^{(1)}}
-\newcommand{\mEZero}{m_E^{(0)}}
-\newcommand{\mIZero}{m_I^{(0)}}
-\begin{align}
-p_c &== 
-\end{align}
-The numeric curve is obtained by solving the following equations simultaneously,
-\begin{widetext}
-\begin{eqnarray}
-\label{me0Sol}
-m_E^{(0)}(p) =&& \frac{1}{\pi} \int_0^\pi d\phi \;  H\left( \frac{1 - \sqrt{K} \sum_B J_{AB} m_B^{(0)} - p J_{EE} \mEOne(p) \cos(2 \phi) }{\sqrt{\sum_B J_{EB}^2 m_B^{(0)} + \frac{p}{\sqrt{K}} J^2_{EE} \mEOne(p) \cos2\phi} } \right)\\
-\label{me1Sol}
-\mEOne(p) =&& \frac{2}{\pi} \int_0^\pi d\phi \; \cos 2\phi H\left( \frac{1 - \sqrt{K} \sum_B J_{AB} m_B^{(0)} - p J_{EE} \mEOne(p)  \cos(2 \phi)}{\sqrt{\sum_B J_{EB}^2 m_B^{(0)} + \frac{p}{\sqrt{K}} J^2_{EE} \mEOne(p) \cos2\phi} } \right)  \\
-\label{mi0Sol}
-m_I^{(0)} =&& \frac{1}{\pi} \int_0^\pi d\phi \;  H\left( \frac{1 - \sqrt{K} \sum_B J_{AB} m_B^{(0)} }{\sqrt{\sum_B J_{IB}^2 m_B^{(0)}}} \right) \\
-\end{eqnarray}
-\end{widetext}
-
-\subsection{Rewiring: Adding $\mathcal{O} (\sqrt{K})$functionally specific connections}
-
-\subsubsection{$\kappa \; \sqrt{K}$, modified model}
-\begin{itemize}
-    \item Estimate the PO's of neurons in the network
-	\item Remove $\kappa \sqrt{K}$ connections on average
-	\item Replace them by new $\kappa \sqrt{K}$ connections that depend on the difference in PO's
-\end{itemize}
-
-\subsubsection{Circular variance as a function of $\kappa$} 
-
-\subsubsection{Strenghtened connectiones}
-\begin{itemize}
-    \item Estimate the PO's of neurons in the network
-	\item Remove $\kappa \sqrt{K}$ connections on average
-	\item Replace them by new $\frac{\kappa}{\omega} \sqrt{K}$ connections of strength $\omega J_{EE}$ that depend on the difference in PO's
-\end{itemize}
-
-\subsubsection{Simulations with rewiring} 
-
-\section{Simulations of a network of conductance based neurons }
-\lipsum[1]
+\input{./simulations}
 
 \section{Conclusions}
-\lipsum[1]
-
-
+....
+....\\
+%\lipsum[1-2]
 
 \appendix
 
 \section*{Appendixes}
 
+\input{./appendix2}
+
+
+
 % The \nocite command causes all entries in a bibliography to be printed out
 % whether or not they are actually referenced in the text. This is appropriate
 % for the sample file to show the different styles of references, but authors
 % most likely will not want to use it.
-\nocite{*}
-
+% \nocite{*}
 \bibliography{apssamp}% Produces the bibliography via BibTeX.
 
 \end{document}

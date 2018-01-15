@@ -1,0 +1,40 @@
+\section{Simulations}
+\newcommand{\mEOne}{m_E^{(1)}}
+\newcommand{\mEZero}{m_E^{(0)}}
+\newcommand{\mIZero}{m_I^{(0)}}
+The numeric curve is obtained by solving the following equations simultaneously,
+\begin{widetext}
+\begin{eqnarray}
+\label{me0Sol}
+m_E^{(0)}(p) =&& \frac{1}{\pi} \int_0^\pi d\phi \;  H\left( \frac{1 - \sqrt{K} \sum_B J_{AB} m_B^{(0)} - p J_{EE} \mEOne(p) \cos(2 \phi) }{\sqrt{\sum_B J_{EB}^2 m_B^{(0)} + \frac{p}{\sqrt{K}} J^2_{EE} \mEOne(p) \cos2\phi} } \right)\\
+\label{me1Sol}
+\mEOne(p) =&& \frac{2}{\pi} \int_0^\pi d\phi \; \cos 2\phi H\left( \frac{1 - \sqrt{K} \sum_B J_{AB} m_B^{(0)} - p J_{EE} \mEOne(p)  \cos(2 \phi)}{\sqrt{\sum_B J_{EB}^2 m_B^{(0)} + \frac{p}{\sqrt{K}} J^2_{EE} \mEOne(p) \cos2\phi} } \right)  \\
+\label{mi0Sol}
+m_I^{(0)} =&& \frac{1}{\pi} \int_0^\pi d\phi \;  H\left( \frac{1 - \sqrt{K} \sum_B J_{AB} m_B^{(0)} }{\sqrt{\sum_B J_{IB}^2 m_B^{(0)}}} \right) \\
+\end{eqnarray}
+\end{widetext}
+
+\subsection{Rewiring: Adding $\mathcal{O} (\sqrt{K})$functionally specific connections}
+
+\subsubsection{$\kappa \; \sqrt{K}$, modified model}
+\begin{itemize}
+    \item Estimate the PO's of neurons in the network
+	\item Remove $\kappa \sqrt{K}$ connections on average
+	\item Replace them by new $\kappa \sqrt{K}$ connections that depend on the difference in PO's
+\end{itemize}
+
+\subsubsection{Circular variance as a function of $\kappa$} 
+
+\subsection{Strenghtened connectiones}
+\begin{itemize}
+    \item Estimate the PO's of neurons in the network
+	\item Remove $\kappa \sqrt{K}$ connections on average
+	\item Replace them by new $\frac{\kappa}{\omega} \sqrt{K}$ connections of strength $\omega J_{EE}$ that depend on the difference in PO's
+\end{itemize}
+
+\subsection{Simulations with rewiring} 
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:
