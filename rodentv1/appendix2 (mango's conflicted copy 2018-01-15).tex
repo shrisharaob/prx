@@ -1,4 +1,8 @@
 \subsection{Mean input}
+%\newcommand{\PopAvg}[2]{\left\langle{#1}\right\rangle_{#2}}
+%\newcommand{\PopAvgSqr}[2]{\left[{#1}\right]_{#2}}
+%\newcommand{\PopAvgDPhi}[1]{\left[{#1}\right]_{\delta \phi}}
+
 \begin{eqnarray}
 u_A(\theta) := \lim_{K \rightarrow \infty} \lim_{N_0 \rightarrow \infty} \PopAvgSqr{\PopAvg{u_A^i(\theta, t)}{t}}{\delta \theta} 
 \end{eqnarray}
@@ -24,13 +28,13 @@ u_I^{(1)} =&& \frac{1}{\sqrt{2}} J_{E0} m_0^{(1)} \cos 2 \theta  \label{ui1}
 -&& \PopAvgDPhi{\PopAvg{(u_A^i(\theta, t))}{t}}^2  \\
 =&& J_{A0}^2 m_0^{(0)} + \sum_{B \in \lbrace  E, I \rbrace } \frac{J_{AB}^2}{\pi} \nonumber \\
 \times&&\int_0^{\pi} d\theta^{\prime} \left[ 1 +  \frac{2\kappa_{AB}}{\sqrt{K}} \; cos(2 \theta^{\prime}) \right] m_B(\theta - \theta^{\prime}) \\
-=&& J_{A0}^2 m_0^{(0)} + \sum_{B \in \lbrace  E, I \rbrace } J_{AB}^2 m_B^{(0)} \label{alphaEapdx}
+=&& J_{A0}^2 m_0^{(0)} + \sum_{B \in \lbrace  E, I \rbrace } J_{AB}^2 m_B^{(0)} \label{alphaE}
 \end{eqnarray}
 
 \subsection{Quenched disorder}
 \begin{eqnarray}
-\beta_A(\theta, \Delta)  :=&&  \lim_{K \rightarrow \infty} \lim_{N_0 \rightarrow \infty} \left\lbrace \PopAvgDPhi{ \PopAvg{u^i_A(\phi + \Delta, t) - \PopAvgDPhi{u^i_A(\phi + \Delta, t)}}{t} \; \PopAvg{u^i_A(\phi - \Delta, t)- \PopAvgDPhi{u^i_A(\phi - \Delta, t)}}{t} } \right\rbrace \\ %\left\lbrace \PopAvgDPhi{ \PopAvg{u^i_A(\theta + \Delta, t) - \PopAvgDPhi{u^i_A(\theta + \Delta, t)}}{t}} \right. \right. \nonumber \\
-%\qquad \qquad&& \left. \left. \PopAvg{u^i_A(\theta - \Delta, t)- \PopAvgDPhi{u^i_A(\theta - \Delta, t)}}{t} } \right\rbrace \\
+\beta_A(\theta, \Delta)  :=&&  \lim_{K \rightarrow \infty} \lim_{N_0 \rightarrow \infty} \left\lbrace \PopAvgDPhi{ \PopAvg{u^i_A(\theta + \Delta, t) - \PopAvgDPhi{u^i_A(\theta + \Delta, t)}}{t} \right. \right. \nonumber \\
+\qquad \qquad&& \left. \left. \PopAvg{u^i_A(\theta - \Delta, t)- \PopAvgDPhi{u^i_A(\theta - \Delta, t)}}{t} } \right\rbrace \\
 =&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] + \sum_{B \in \lbrace  E, I \rbrace } \frac{J_{AB}^2}{\pi} \nonumber \\
 \times&& \int_0^{\pi} d\theta^{\prime} \left[ 1 +  \frac{2\kappa_{AB}}{\sqrt{K}} \; cos(2 \theta^{\prime}) \right] q_B(\theta, \Delta) \\
 =&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] \nonumber \\
@@ -61,12 +65,14 @@ C_0 =&& H^{\prime}\Hb  \left( \Hx \right) =  -\CZero  \left( \Hx \right) \\
 C_1 =&&  H^{\prime \prime}\Hb  \left( \Hx \right)^2 = \COne \left( \Hx \right)^2 \\ 
 C_2 =&& H^{\prime \prime \prime}\Hb  \left( \Hx \right)^3 = -\CTwo \left( \Hx \right)^3
 \end{eqnarray}
-\end{widetext} 
+\end{widetext} \\
+
 Integrating Eq.[\ref{mE1Int}], \\
 \begin{eqnarray}
 m_E^{(1)} = -\frac{\kappa J_{EE}} {\sqrt{\alpha_E}} m_E^{(1)} H^{\prime} \Hb +&& \mathcal{O} \left( m_E^{(1)} \right)^3 \label{me1Sol} \\
 m_E^{(1)} \left[1 + \frac{\kappa J_{EE}} {\sqrt{\alpha_E}} H^{\prime} \Hb \right] =&& 0 
 \end{eqnarray}
+
 \begin{eqnarray}
 \kappa_c =&& \frac{ - \sqrt{\alpha_E}}{J_{EE} H^{ \prime } \Hb}
 \end{eqnarray}
@@ -75,14 +81,14 @@ m_E^{(1)} \left[1 + \frac{\kappa J_{EE}} {\sqrt{\alpha_E}} H^{\prime} \Hb \right
 \begin{widetext}
 \begin{eqnarray}
 \label{stabme0}
-\frac{1}{\sqrt{\alpha_E}} \left(1 - \uEZero - \uOne \costh \right)  =&& A_0 + \mEOne (A_1 - \avar \costh) + \left( \mEOne \right)^2 A_2 + \left( \mEOne \right)^3 A_3 + \mathcal{O} \left( \mEOne \right)^4 \\
+\frac{1}{\sqrt{\alpha_E}} \left(1 - \uEZero - \uOne \costh \right)  =&& A_0 + \mEOne (A_1 - \a \costh) + \left( \mEOne \right)^2 A_2 + \left( \mEOne \right)^3 A_3 + \mathcal{O} \left( \mEOne \right)^4 \\
 \mEZero = H(A_0) + \mEOne \Hp A_1 +&& \left( \mEOne \right)^2 \left[A_2  \Hp + \Hpp \left(\frac{A^2_1}{6} + \frac{1}{4} \avar^2 \right) \right] \nonumber \\
 +  \left( \mEOne \right)^3&& \left[A_3 \Hp + A_2 A_1 \Hpp + \Hppp \left( \frac{A^3_1}{6} + \frac{A_1}{4}  \right) \avar^3 \right] + \mathcal{O} \left( \mEOne \right)^4 \\
 \mEOne = - \mEOne \Hp \avar  - && \left( \mEOne \right)^2 \left[A_1 \avar  \Hpp \right] \nonumber \\
 \qquad -  \left( \mEOne \right)^3&& \left[A_2 \avar \Hpp + \Hppp \left( \frac{A^2_1}{2} + \frac{1}{8} \avar^3  \right) \avar^3 \right] + \mathcal{O} \left( \mEOne \right)^4 
 \label{stabme1}
-\end{eqnarray}
 \end{widetext}
+\end{eqnarray}
 When $K \rightarrow \infty$, balance requires that  $\mEZero$ and $\mIZero$ must remain fixed even when $mEOne \neq 0$. This is true only when all the coefficients of $\mEOne$ in Eq. \ref{stabme0} are zero, therefore, \\
 
 \begin{eqnarray}

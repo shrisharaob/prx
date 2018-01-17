@@ -4,10 +4,10 @@
 \contentsline {section}{\numberline {}Contents}{1}{}
 \tocdepth@restore 
 \contentsline {section}{\numberline {I}Introduction}{1}{}
-\contentsline {section}{\numberline {II}Rodent L2/3 binary model}{1}{}
+\contentsline {section}{\numberline {II}Rodent L2/3 binary model}{2}{}
 \contentsline {subsection}{\numberline {A}Coarse grained analysis}{2}{}
 \contentsline {subsection}{\numberline {B}Population averaged inputs}{3}{}
-\contentsline {subsection}{\numberline {C}Equal Time Fluctuations of the Inputs}{3}{}
+\contentsline {subsection}{\numberline {C}Equal Time Fluctuations of the Inputs}{4}{}
 \contentsline {subsection}{\numberline {D}The Balanced Solution}{4}{}
 \contentsline {subsection}{\numberline {E}Statistics of the Quenched Disorder:}{4}{}
 \contentsline {subsection}{\numberline {F}Symmetries of the Solution}{5}{}
@@ -19,14 +19,13 @@
 \contentsline {subsection}{\numberline {D}Symmetry breaking: Bump solution}{8}{}
 \contentsline {subsubsection}{\numberline {1}When $m_0^{(1)} = 0$}{8}{}
 \contentsline {subsubsection}{\numberline {2}Behavior of $m_E^{(0)}$ and $m_E^{(1)}$ as $\kappa $ is varied}{8}{}
-\contentsline {subsubsection}{\numberline {}Stability of the bump solution}{9}{}
-\contentsline {subsubsection}{\numberline {3}Dynamics of the phase}{9}{}
-\contentsline {paragraph}{\numberline {a}OSI distribution}{9}{}
-\contentsline {paragraph}{\numberline {b}Virtual rotation}{9}{}
+\contentsline {subsubsection}{\numberline {3}Stability of the bump solution}{9}{}
+\contentsline {subsection}{\numberline {E}OSI distribution}{9}{}
 \contentsline {section}{\numberline {IV}Simulations}{9}{}
 \contentsline {subsection}{\numberline {A}Rewiring: Adding $\mathcal {O} (\sqrt {K})$functionally specific connections}{9}{}
-\contentsline {subsection}{\numberline {B}Strenghtened connectiones}{9}{}
-\contentsline {subsection}{\numberline {C}Circular variance as a function of $\kappa $ and $\omega $}{9}{}
+\contentsline {subsubsection}{\numberline {1}Dynamics of the phase}{9}{}
+\contentsline {subsubsection}{\numberline {2}Virtual rotation}{9}{}
+\contentsline {subsection}{\numberline {B}Rewiring with strenghtened connectiones}{9}{}
 \contentsline {section}{\numberline {V}Conclusions}{9}{}
 \appendix 
 \contentsline {section}{\numberline {}Appendixes}{9}{}
