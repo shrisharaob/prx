@@ -1,7 +1,7 @@
 \section{Adding specific connections}
 We will now study the effects of introducing a small number $\mathcal{O} (\sqrt{K})$ of PO specific recurrent E-to-E connections. Since the network is operating in the balance regime, this results in a significant $\mathcal{O}(1)$ input to the neurons. 
 Let us consider a two population recurrent network of binary neurons where a neuron $i$ in population $A$ has PO $\phi_A^i$. The recurrent network receives external input from FF population which is assumed to consist of neurons with symmetric tuning curves given by, $m^i_0(\theta) = m^{(0)}_0 + \sum_{n=1}^{\infty} m^{(n)}_0 \cos 2n (\theta - \theta_0^i)$, which produces an effective FF input, $u_A^i(\theta) =  J_{A0}  [\sqrt{K} m_0^{(0)} + \sum_{n=1}^{\infty} m^{(n)}_0  z_n^i \cos2 n (\theta - \phi_A^i(n))]$. Making a further assumption that the higher moments are negligible (i.e $m^{(1)}_0 >> m^{(n)}, \forall n > 1$), the effective FF input can be written as $u_A^i(\theta) =  J_{A0}  [\sqrt{K} m_0^{(0)} + m_0^{(1)}z_i \cos2 (\theta - \phi_A^i)]$. Where,  $z_i \sim z e^{-\frac{z^2}{2}}$ and $\phi_A^i \sim \mathcal{U}(0, \pi)$. 
-\subsection{Network Architecture}
+\subsection{Network Architecture} \label{netwArch}
 Starting with a random network $\hat{C}$, we will introduce a small number of PO specific connections E-to-E connections. The resulting network $C$ has $\mathcal{O}(\sqrt{K})$ PO specific E-to-E connections out of $K$. For large K ratio of specific to non-specific connections approaches zero as $\frac{1}{\sqrt{K}}$. The network $\hat{C} $ has probability of connections given by, 
 \begin{eqnarray}
 P(\hat{C}_{EE}^{ij} = 1) =&& \frac{K - 2 \kappa \, \sqrt{K}}{N_E}  \\

@@ -1,38 +1,41 @@
 \subsection{Mean input}
+The population averaged mean input is defined as, 
 \begin{eqnarray}
-u_A(\theta) := \lim_{K \rightarrow \infty} \lim_{N_0 \rightarrow \infty} \PopAvgSqr{\PopAvg{u_A^i(\theta, t)}{t}}{\delta \theta} 
+u_A(\theta) :=&& \lim_{K \rightarrow \infty} \lim_{N_0 \rightarrow \infty} \PopAvgSqr{\PopAvg{u_A^i(\theta, t)}{t}}{\delta \theta}  \\
+=&& u_A^{(0)} + u_A^{(1)} \cos(2 \theta)
 \end{eqnarray}
-The recurrent component of the mean input is given by, 
+The recurrent components of the mean input is given by, 
 \begin{eqnarray}
-u_{AB}(\theta)&& = \sqrt{K} \sum_{B \in \lbrace E, I  \rbrace} \frac{J_{AB}}{\pi} \nonumber \\
-\times&&\int_0^{\pi} d\theta^{\prime} \left[ 1 +  \frac{2\kappa_{AB}}{\sqrt{K}} \; cos(2 \theta^{\prime}) \right] m_B(\theta - \theta^{\prime})
-%u_{IE}(\theta) =&& \sqrt{K} \sum_B \frac{J_{EB}}{\pi} \nonumber \\
-%\times&&\int_0^{\pi} d\theta^{\prime} \left[ 1 + 2 \kappa \; cos(2 \theta^{\prime}) \right] m_B(\theta - \theta^{\prime})
+u_{A, rec}^{(n)} = \sqrt{K} \; (1 &&+ \Theta(n-1)) \sum_{B \in \lbrace E, I  \rbrace} J_{AB} \nonumber \\
+\times&&  \int_0^{\pi} \! \frac{d\theta^{\prime}}{\pi} \left[ 1 +  \frac{2\kappa_{AB}}{\sqrt{K}} \; \cos(2 \theta^{\prime}) \right] \nonumber \\
+\qquad \qquad \qquad \qquad && \times  m_B(\theta - \theta^{\prime}) \cos( 2 n \theta) 
 \end{eqnarray} \\
 Using $m_B(\theta) = \sum_{n = 0}^{\infty} m_B^{(n)} \cos 2 n \theta$ , $\kappa_{EE} = \kappa$ and, $\kappa_{IE} = \kappa_{EI} = \kappa_{II} = 0$, we get
 \begin{eqnarray}
-u_A(\theta) =&& u_A^{(0)} + u_A^{(1)} \cos(2 \theta) \\ 
 u_A^{(0)} =&& \sqrt{K} \left[J_{A0} m_0^{(0)} + \sum_B J_{AB} m_B^{(0)} \right] \label{ue0equation} \\
 u_E^{(1)} =&& \frac{1}{\sqrt{2}} J_{E0} m_0^{(1)} \cos 2 \theta + \kappa J_{EE} m_E^{(1)} \cos 2 \theta \label{ue1} \\
 u_I^{(1)} =&& \frac{1}{\sqrt{2}} J_{E0} m_0^{(1)} \cos 2 \theta  \label{ui1}
 \end{eqnarray}
 
 \subsection{Variance of the input}
+The population averaged variance of the total input is given by, 
 \begin{eqnarray}
 \alpha_A :=&& \lim_{K \rightarrow \infty} \lim_{N \rightarrow \infty}
 \PopAvgDPhi{\PopAvg{(u_A^i(\theta, t))^2}{t}} \nonumber \\ 
 -&& \PopAvgDPhi{\PopAvg{(u_A^i(\theta, t))}{t}}^2  \\
-=&& J_{A0}^2 m_0^{(0)} + \sum_{B \in \lbrace  E, I \rbrace } \frac{J_{AB}^2}{\pi} \nonumber \\
-\times&&\int_0^{\pi} d\theta^{\prime} \left[ 1 +  \frac{2\kappa_{AB}}{\sqrt{K}} \; cos(2 \theta^{\prime}) \right] m_B(\theta - \theta^{\prime}) \\
+=&& J_{A0}^2 m_0^{(0)} + \sum_{B \in \lbrace  E, I \rbrace } J_{AB}^2 \nonumber \\
+\times&&\int_0^{\pi} \! \frac{d\theta^{\prime}}{\pi} \left[ 1 +  \frac{2\kappa_{AB}}{\sqrt{K}} \; cos(2 \theta^{\prime}) \right] m_B(\theta - \theta^{\prime}) \\
 =&& J_{A0}^2 m_0^{(0)} + \sum_{B \in \lbrace  E, I \rbrace } J_{AB}^2 m_B^{(0)} \label{alphaEapdx}
 \end{eqnarray}
 
 \subsection{Quenched disorder}
+The population averaged variance of the time averaged inputs is given by, 
 \begin{eqnarray}
-\beta_A(\theta, \Delta)  :=&&  \lim_{K \rightarrow \infty} \lim_{N_0 \rightarrow \infty} \left\lbrace \PopAvgDPhi{ \PopAvg{u^i_A(\phi + \Delta, t) - \PopAvgDPhi{u^i_A(\phi + \Delta, t)}}{t} \; \PopAvg{u^i_A(\phi - \Delta, t)- \PopAvgDPhi{u^i_A(\phi - \Delta, t)}}{t} } \right\rbrace \\ %\left\lbrace \PopAvgDPhi{ \PopAvg{u^i_A(\theta + \Delta, t) - \PopAvgDPhi{u^i_A(\theta + \Delta, t)}}{t}} \right. \right. \nonumber \\
+\beta_A(\theta, \Delta)  :=&&  \lim_{K \rightarrow \infty} \lim_{N_0 \rightarrow \infty} \left\lbrace \left[ \PopAvg{u^i_A(\phi + \Delta, t) - \PopAvgDPhi{u^i_A(\phi + \Delta, t)}}{t} \right. \right. \nonumber \\
+\qquad&& \left. \left. \PopAvg{u^i_A(\phi - \Delta, t)- \PopAvgDPhi{u^i_A(\phi - \Delta, t)}}{t} \right]_{\delta \phi} \right\rbrace \\ %\left\lbrace \PopAvgDPhi{ \PopAvg{u^i_A(\theta + \Delta, t) - \PopAvgDPhi{u^i_A(\theta + \Delta, t)}}{t}} \right. \right. \nonumber \\
 %\qquad \qquad&& \left. \left. \PopAvg{u^i_A(\theta - \Delta, t)- \PopAvgDPhi{u^i_A(\theta - \Delta, t)}}{t} } \right\rbrace \\
-=&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] + \sum_{B \in \lbrace  E, I \rbrace } \frac{J_{AB}^2}{\pi} \nonumber \\
-\times&& \int_0^{\pi} d\theta^{\prime} \left[ 1 +  \frac{2\kappa_{AB}}{\sqrt{K}} \; cos(2 \theta^{\prime}) \right] q_B(\theta, \Delta) \\
+=&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] + \sum_{B \in \lbrace  E, I \rbrace } J_{AB}^2 \nonumber \\
+\times&& \int_0^{\pi} \! \frac{d\theta^{\prime}}{\pi} \left[ 1 +  \frac{2\kappa_{AB}}{\sqrt{K}} \; cos(2 \theta^{\prime}) \right] q_B(\theta, \Delta) \\
 =&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] \nonumber \\
 +&& \sum_{B \in \lbrace E, I \rbrace}  \left(J_{AB}\right)^2 q_B^{(0)}(\Delta)\\
 =&&  \beta_{A0} (\Delta) + \sum_{B \in \lbrace E, I \rbrace}  \left(J_{AB}\right)^2 q_B^{(0)}(\Delta)
@@ -43,15 +46,7 @@ In the large $K$ limit, $m_E^{(0)}$ will remain unchanged as $\kappa$ is varied.
 \begin{eqnarray}
 H(z) &:= \frac{1}{2}  erfc\left(\frac{z}{\sqrt{2}} \right) 
 \end{eqnarray}
-\\
-Expanding $H(\cdot)$ for small $m_E^{(1)}$ in Eq. \ref{me1m10}, %where, \\ $x = -\Hx$ and $b = \Hb$, \\
-% \begin{eqnarray}
-% H(x +b) =&& H(b) - x \underbrace{\left[\frac{1}{\sqrt{2 \pi}} exp(-b^2 /2) \right]}_{=: \; C_0} + x^2 \underbrace{\left[ \frac{b}{\sqrt{2 \pi}} exp(-b^2 /2) \right]}_{=: \; C_1} \\ \nonumber 
-% &\quad \quad  + x^3 \underbrace{\left[\frac{(1 - b^2)}{6 \sqrt{2 \pi}} exp(-b^2 /2) \right]}_{=: \; C_2} + \mathcal{O} \left(  x^4 \right)
-% \end{eqnarray}
-% \\
-% Which gives, \\
-%Expanding Eq.[\ref{me1}] for small $u^{(1)}$,
+Expanding $H(\cdot)$ for small $m_E^{(1)}$ in Eq. \ref{me1m10}, %where, \\ $x = -\Hx$ and $b = 
 \begin{widetext}
 \begin{eqnarray}
 \label{mE1Int}
@@ -101,7 +96,7 @@ G(\kappa_c)  =&& -\frac{\kappa^3_c J_{EE}^{3}}{\left( \alpha_E^(0) \right)^{\fra
 =&& - \frac{e^{\frac{-A^2_0}{2}}}{\sqrt{2 \pi}} \frac{\kappa^3_c J_{EE}^{3}}{\left( \alpha_E^(0) \right)^{\frac{3}{2}}}  \left[1 + A^2_0 \right] \\
 \Rightarrow&& \sign(G(\kappa_c)) = -1
 \end{eqnarray} 
-...\\
+
 \subsection{Simulations}
 % \newcommand{\mEOne}{m_E^{(1)}}
 % \newcommand{\mEZero}{m_E^{(0)}}

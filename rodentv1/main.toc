@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {}Contents}{1}{}
 \tocdepth@restore 
 \contentsline {section}{\numberline {I}Introduction}{1}{}
-\contentsline {section}{\numberline {II}Rodent L2/3 binary model}{2}{}
+\contentsline {section}{\numberline {II}Binary model}{2}{}
 \contentsline {subsection}{\numberline {A}Coarse grained analysis}{2}{}
 \contentsline {subsection}{\numberline {B}Population averaged inputs}{3}{}
 \contentsline {subsection}{\numberline {C}Equal Time Fluctuations of the Inputs}{4}{}
@@ -28,11 +28,11 @@
 \contentsline {subsection}{\numberline {B}Rewiring with strenghtened connectiones}{9}{}
 \contentsline {section}{\numberline {V}Conclusions}{9}{}
 \appendix 
-\contentsline {section}{\numberline {}Appendixes}{9}{}
-\contentsline {subsection}{\numberline {1}Mean input}{9}{}
-\contentsline {subsection}{\numberline {2}Variance of the input}{9}{}
+\contentsline {section}{\numberline {}Appendixes}{10}{}
+\contentsline {subsection}{\numberline {1}Mean input}{10}{}
+\contentsline {subsection}{\numberline {2}Variance of the input}{10}{}
 \contentsline {subsection}{\numberline {3}Quenched disorder}{10}{}
 \contentsline {subsection}{\numberline {4}Computing $\kappa _{critical}$}{10}{}
 \contentsline {subsection}{\numberline {5}Stability of the bump solution}{11}{}
-\contentsline {subsection}{\numberline {6}Simulations}{11}{}
+\contentsline {subsection}{\numberline {6}Simulations}{12}{}
 \contentsline {section}{\numberline {}References}{12}{}

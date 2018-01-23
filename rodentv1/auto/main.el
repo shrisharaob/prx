@@ -6,6 +6,8 @@
    (TeX-run-style-hooks
     "latex2e"
     "notation"
+    "abstract"
+    "./introduction"
     "./rndnw/model"
     "./rndnw/analysis"
     "./specific_connections"
@@ -18,7 +20,6 @@
     "bm"
     "lipsum")
    (LaTeX-add-labels
-    "sec:level1"
     "sec:level2")
    (LaTeX-add-bibliographies
     "apssamp")))
