@@ -32,14 +32,6 @@ u_I^{i} (\theta) =&& u^{(0)}_I + \sqrt{\beta_I - \beta_{I0}^{(1)}} x_i +  \sqrt{
 =&& \overline{u}_I(\theta, x_i, \phi_I^i) +  \sqrt{\beta_{I0}^{(1)}} z_i \cos 2 (\theta - \phi_I^i)
 \end{eqnarray}
 Where, $x_i \sim \mathcal{N}(0, 1)$.  As in the random network before, the input consists of un-tuned and tuned components. With specific connections, now there is an additional tuned component of amplitude  $\kappa J_{EE} m_E^{(1)}$. Here, $m_E^{(1)}$ is the first Fourier moment of the mean activity in $\theta$. 
-% Where, 
-% \begin{eqnarray}
-% \alpha_{A} =&& \sum_{B \in \lbrace 0, E, I \rbrace} J_{AB}^2 m_B^{(0)} \\
-% \beta_{A}(\Delta) =&& \sum_{B \in \lbrace E, I \rbrace}  \left(J_{AB}\right)^2 q_B^{(0)}(\Delta) \\
-% \beta_{A0} (\Delta) =&& \beta_{A0}^{(0)} + \beta_{A0}^{(1)} \nonumber \\
-% =&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] \\
-% q_A (\theta, \Delta) =&& \int \mathcal{D} x \,  m_A(x, \theta + \Delta)  m_A(x, \theta - \Delta) 
-% \end{eqnarray}
 Given the time averaged input, after averaging over $z$, the activity of a neuron at angle theta can be written as, 
 
 \begin{eqnarray}
@@ -49,14 +41,6 @@ Given the time averaged input, after averaging over $z$, the activity of a neuro
 \times&&  \exp \left( \frac{-2 \left( \overline{u}_A \right)^2  }{ 4 \tilde{\alpha}_A + \beta_A^{(1)} \cos^2  (\theta - \phi_A^i)}   \right) \cos2(\theta - \phi_A^i) \nonumber \\
 \times&& \left[ 1 - H \left( \frac{- \overline{u}_A \sqrt{\beta_A^{(1)} } \cos 2 (\theta - \phi_A^i) } {  \sqrt{2 \tilde{\alpha}^2_A + \beta_{A0}^{(1)} \tilde{\alpha}_A \cos^2 2 (\theta - \phi_A^i) }} \right) \right]  \label{mAiofTheta} 
 \end{eqnarray}
-
-% \begin{eqnarray}
-% &&m_A^i(\theta) = m_A(x_i, \theta) \nonumber \\
-% =&& \int_{0}^{\infty} \mathtt{d} z\,  z \mathtt{e}^{-\frac{z^2}{2}} H\left( \frac{-u_A^i(\theta)}{\sqrt{\tilde{\alpha}_A }} \right)  \\
-% =&& H\left( \frac{-\overline{u}_A }{\sqrt{\tilde{\alpha}_A }}  \right) + \sqrt{\frac{\beta_{A0}^{(1)} }{  \tilde{\alpha}_A + \beta_{A0}^{(1)} \cos^2 2 (\theta - \phi_A^i) }} \nonumber \\ 
-% \times&&  \exp \left( -\frac{\left( \overline{u}_A \right)^2  }{ 2 \tilde{\alpha}_A} \left[ 1 - \frac{\beta_{A0}^{(1)} }{ \tilde{\alpha}_A + \beta_{A0}^{(1)} \cos^2 2 (\theta - \phi_A^i)  } \cos^2 2 (\theta - \phi_A^i) \right] \right) \nonumber \\
-% \times&& \left[ H \left( - \frac{ \sqrt{\beta_A^{(1)} } \overline{u}_A \cos 2 (\theta - \phi_A^i)} {  \tilde{\alpha}_A + \beta_{A0}^{(1)} \cos^2 2 (\theta - \phi_A^i) } \right) - 1 \right] \cos2(\theta - \phi_A^i) \label{mAiofTheta} 
-% \end{eqnarray}
 
 \begin{eqnarray}
 \tilde{\alpha}_A =&& \alpha_A - \beta_A(\Delta = 0) \\ % - \beta_{A0}^{(0)} - \beta_{A0}^{(1)} \\
@@ -76,19 +60,9 @@ u_I(\theta) =&& u^{(0)}_I + \frac{1}{\sqrt{2}} J_{I0} m_0^{(1)} \cos 2 \theta  \
 =&& u_E^{(0)} + u_I^{(1)} \costh \\
 \end{eqnarray}
 The mean activity of the system is completely described by the following equations for the first two moments of the mean activities. All the higher moments of the mean activities are zero. 
-%\begin{widetext}
-%\begin{eqnarray}
-%m_E^{(0)} =&&  \int_0^{\pi} \! \frac{\mathtt{d}\theta}{\pi}  H \left( \frac{-u^{(0)}_E - (\frac{1}{\sqrt{2}} J_{E0} m_0^{(1)}  - \kappa  J_{EE} m_E^{(1)} ) \cos 2 \theta}{\sqrt{\alpha_E} } \right)  \label{me0} \\
-%m_E^{(1)} =&& \frac{2}{\pi} \int_0^{\pi} \! \mathtt{d} \theta H \left( \frac{-u^{(0)}_E - \frac{1}{\sqrt{2}} J_{E0} m_0^{(1)} \cos 2 \theta - \kappa  J_{EE} m_E^{(1)} \cos 2 \theta}{\sqrt{\alpha_E} } \right) \cos 2 \theta  \label{me1} \\
-%m_I^{(0)} =&& \frac{1}{\pi} \int_0^{\pi} \! \mathtt{d} \theta H \left( \frac{-u^{(0)}_I - \frac{1}{\sqrt{2}} J_{I0} m_0^{(1)} \cos 2 \theta}{\sqrt{\alpha_I} } \right)  \label{mi0} \\
-%m_I^{(1)} =&& \frac{2}{\pi} \int_0^{\pi} \! \mathtt{d} \theta H \left( \frac{-u^{(0)}_I - \frac{1}{\sqrt{2}} J_{I0} m_0^{(1)} \cos 2 \theta }{\sqrt{\alpha_I} } \right) \cos 2 \theta  \label{mi1}
-%\end{eqnarray}
-%\end{widetext}
 \begin{eqnarray}
 m_A^{(0)} =&&  \int_0^{\pi} \! \frac{\mathtt{d}\theta}{\pi}  H \left( \frac{-u_A^{(0)} - u_A^{(1)} \costh}{\sqrt{\alpha_A} } \right)  \label{me0} \\
 m_A^{(1)} =&& 2 \int_0^{\pi} \! \frac{\mathtt{d}\theta}{\pi} H \left( \frac{-u_A^{(0)} - u_A^{(1)} \costh}{\sqrt{\alpha_A} } \right) \cos 2 \theta  \label{me1} 
-%m_I^{(0)} =&& \frac{1}{\pi} \int_0^{\pi} \! \mathtt{d} \theta H \left( \frac{-u^{(0)}_I - \frac{1}{\sqrt{2}} J_{I0} m_0^{(1)} \cos 2 \theta}{\sqrt{\alpha_I} } \right)  \label{mi0} \\
-%m_I^{(1)} =&& \frac{2}{\pi} \int_0^{\pi} \! \mathtt{d} \theta H \left( \frac{-u^{(0)}_I - \frac{1}{\sqrt{2}} J_{I0} m_0^{(1)} \cos 2 \theta }{\sqrt{\alpha_I} } \right) \cos 2 \theta  \label{mi1}
 \end{eqnarray}
 When $m_0^{(1)} = 0$, $m_A^{(1)} = 0$ are solutions of this system. But as $\kappa$ is increased, $m_E^{(1)} = 0$ solution loses its stabilty and new stable symmetric solutions appear. In the next section, we will consider the case when $m_0^{(1)} = 0$ and study the system of equations above for finite specific connectivity i.e. $\kappa \ne 0$. 
 \subsection{\label{subsec:symbreak}Symmetry breaking: Bump solution} 
@@ -110,11 +84,6 @@ Evolution of mean rates is given by,\\
 \tau_A \frac{d}{dt} m_A(\theta, t) = -m_A(\theta, t) + H\left( \frac{-u_A(\theta, t)}{\sqrt{\alpha_A}} \right)
 \end{equation}
 At the fixed point the mean activities are completely described by, \\
-% \begin{eqnarray}
-% m_E^{(0)} =&& \frac{1}{\pi} \int_0^\pi d\theta \; H\left( \frac{1 - u_E^{(0)} - u_E^{(1)} \cos(2 \theta)}{\sqrt{\alpha_A}} \right) \label{me0}\\
-% m_E^{(1)} =&& \frac{2}{\pi} \int_0^\pi d\theta \; H\left( \frac{1 - u_E^{(0)} - u_E^{(1)} \cos(2 \theta)}{\sqrt{\alpha_A}}  \right) \cos(2 \theta) \label{me1}
-% \end{eqnarray}
-% \\
 \begin{eqnarray}
 m_E^{(0)} =&& \frac{1}{\pi} \int_0^\pi d\theta \; H\left( \frac{-u_E(\theta)}{\sqrt{\alpha_A}} \right) \label{me0m10}\\
 m_E^{(1)} =&& \frac{2}{\pi} \int_0^\pi d\theta \; H\left( \frac{-u_E(\theta)}{\sqrt{\alpha_A}}  \right) \cos(2 \theta) \label{me1m10} \\
@@ -131,7 +100,6 @@ m_E^{(1)} \, F(\kappa) + \left( m_E^{(1)} \right)^3 \,  G(\kappa) + \mathcal{O} 
 If, $\exists \kappa_c: F(\kappa_{c}) = 0$, then $\forall \kappa>\kappa_c$, $m_E^{(1)} \neq 0$ solutions are stable if $\sign (G(\kappa_c)) = -1 $ . The expression for $\kappa_c$ is obtained in terms of model parameters and is given by, 
 \begin{eqnarray}
 \label{eq:kappac}
-%p_c = 3.404
 \kappa_{c} &= \frac{ - \sqrt{\alpha_E^{\star (0)}}}{J_{EE} H^{\prime}(h^{\star})}; \,\,\,\, h^{\star} = \frac{- u_E^{\star (0)}}{\sqrt{\alpha_E^{\star (0)}}} 
 \end{eqnarray}
 For $\kappa > \kappa_c$, the moments of the input components $u_E^{(0)}$ and $u_E^{(1)}$ vary in such a manner as to keep $m_E^{(0)}$ fixed. 
@@ -153,12 +121,6 @@ In this case, even when $\kappa = 0$, there is a bump and there is no abrupt tra
 
 \subsection{OSI distribution}
 \input{osi}
-
-
-
-
-
-
 
 
 %%% Local Variables:

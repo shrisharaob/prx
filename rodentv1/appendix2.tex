@@ -35,8 +35,7 @@ The population averaged variance of the time averaged inputs is given by,
 \begin{eqnarray}
 \beta_A(\theta,&& \Delta)  :=  \nonumber \\
 &&\lim_{K \rightarrow \infty} \lim_{N_0 \rightarrow \infty} \left\lbrace \left[ \PopAvg{u^i_A(\phi + \Delta, t) - \PopAvgDPhi{u^i_A(\phi + \Delta, t)}}{t} \right. \right. \nonumber \\
-\qquad&& \left. \left. \PopAvg{u^i_A(\phi - \Delta, t)- \PopAvgDPhi{u^i_A(\phi - \Delta, t)}}{t} \right]_{\delta \phi} \right\rbrace \\ %\left\lbrace \PopAvgDPhi{ \PopAvg{u^i_A(\theta + \Delta, t) - \PopAvgDPhi{u^i_A(\theta + \Delta, t)}}{t}} \right. \right. \nonumber \\
-%\qquad \qquad&& \left. \left. \PopAvg{u^i_A(\theta - \Delta, t)- \PopAvgDPhi{u^i_A(\theta - \Delta, t)}}{t} } \right\rbrace \\
+\qquad&& \left. \left. \PopAvg{u^i_A(\phi - \Delta, t)- \PopAvgDPhi{u^i_A(\phi - \Delta, t)}}{t} \right]_{\delta \phi} \right\rbrace \\ 
 =&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] + \sum_{B \in \lbrace  E, I \rbrace } J_{AB}^2 \nonumber \\
 \times&& \int_0^{\pi} \! \frac{d\theta^{\prime}}{\pi} \left[ 1 +  \frac{2\kappa_{AB}}{\sqrt{K}} \; cos(2 \theta^{\prime}) \right] q_B(\theta, \Delta) \\
 =&& J^2_{A0} \left[ (m_0^{(0)})^2 + \frac{1}{2}(m_0^{(1)})^2  \cos(4\Delta) \right] \nonumber \\
@@ -71,17 +70,6 @@ m_E^{(1)} &&\left[1 + \frac{\kappa J_{EE}} {\sqrt{\alpha_E}} H^{\prime} \Hb \rig
 \end{eqnarray}
 \subsection{Stability of the bump solution}
 \newcommand{\avar}{\left( \frac{\kappa J_{EE}}{\sqrt{\alpha_E}} \right)}
-% \begin{widetext}
-% \begin{eqnarray}
-% \label{stabme0}
-% \frac{1}{\sqrt{\alpha_E}} \left(1 - \uEZero - \uOne \costh \right)  =&& A_0 + \mEOne (A_1 - \avar \costh) + \left( \mEOne \right)^2 A_2 + \left( \mEOne \right)^3 A_3 + \mathcal{O} \left( (\mEOne)^4 \right) \\
-% \mEZero = H(A_0) + \mEOne \Hp A_1 +&& \left( \mEOne \right)^2 \left[A_2  \Hp + \Hpp \left(\frac{A^2_1}{6} + \frac{1}{4} \avar^2 \right) \right] \nonumber \\
-% +  \left( \mEOne \right)^3&& \left[A_3 \Hp + A_2 A_1 \Hpp + \Hppp \left( \frac{A^3_1}{6} + \frac{A_1}{4}  \right) \avar^3 \right] + \mathcal{O} \left( \mEOne \right)^4 \\
-% \mEOne = - \mEOne \Hp \avar  - && \left( \mEOne \right)^2 \left[A_1 \avar  \Hpp \right] \nonumber \\
-% \qquad -  \left( \mEOne \right)^3&& \left[A_2 \avar \Hpp + \Hppp \left( \frac{A^2_1}{2} + \frac{1}{8} \avar^3  \right) \avar^3 \right] + \mathcal{O} \left( \mEOne \right)^4 
-% \label{stabme1}
-% \end{eqnarray}
-% \end{widetext}
 \begin{widetext}
 \begin{eqnarray}
 \label{stabme0}
@@ -114,9 +102,6 @@ G(\kappa_c)  = -\frac{\kappa^3_c J_{EE}^{3}}{\left( \alpha_E^(0) \right)^{\frac{
 \end{eqnarray} 
 
 \subsection{Simulations}
-% \newcommand{\mEOne}{m_E^{(1)}}
-% \newcommand{\mEZero}{m_E^{(0)}}
-% \newcommand{\mIZero}{m_I^{(0)}}
 The numeric curve is obtained by solving the following equations simultaneously, without taking the limit $K \rightarrow \infty$ 
 \begin{widetext}
 \begin{eqnarray}
