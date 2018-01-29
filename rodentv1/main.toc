@@ -3,36 +3,40 @@
 \tocdepth@munge 
 \contentsline {section}{\numberline {}Contents}{1}{}
 \tocdepth@restore 
-\contentsline {section}{\numberline {I}Introduction}{1}{}
+\contentsline {section}{\numberline {I}Introduction}{2}{}
 \contentsline {section}{\numberline {II}Binary model}{2}{}
-\contentsline {subsection}{\numberline {A}Coarse grained analysis}{2}{}
-\contentsline {subsection}{\numberline {B}Population averaged inputs}{3}{}
+\contentsline {subsection}{\numberline {A}Coarse grained analysis}{3}{}
+\contentsline {subsection}{\numberline {B}Population averaged inputs}{4}{}
 \contentsline {subsection}{\numberline {C}Equal Time Fluctuations of the Inputs}{4}{}
 \contentsline {subsection}{\numberline {D}The Balanced Solution}{4}{}
-\contentsline {subsection}{\numberline {E}Statistics of the Quenched Disorder:}{4}{}
-\contentsline {subsection}{\numberline {F}Symmetries of the Solution}{5}{}
+\contentsline {subsection}{\numberline {E}Statistics of the Quenched Disorder:}{5}{}
+\contentsline {subsection}{\numberline {F}Symmetries of the Solution}{6}{}
 \contentsline {subsection}{\numberline {G}The solution in the cases without map}{6}{}
-\contentsline {section}{\numberline {III}Adding specific connections}{7}{}
+\contentsline {section}{\numberline {III}Adding specific connections}{6}{}
 \contentsline {subsection}{\numberline {A}Network Architecture}{7}{}
 \contentsline {subsection}{\numberline {B}Time averaged input statistics}{7}{}
 \contentsline {subsection}{\numberline {C}Average population activities}{8}{}
 \contentsline {subsection}{\numberline {D}Symmetry breaking: Bump solution}{8}{}
-\contentsline {subsubsection}{\numberline {1}When $m_0^{(1)} = 0$}{8}{}
+\contentsline {subsubsection}{\numberline {1}Population averaged inputs when $m_0^{(1)} = 0$}{8}{}
 \contentsline {subsubsection}{\numberline {2}Behavior of $m_E^{(0)}$ and $m_E^{(1)}$ as $\kappa $ is varied}{8}{}
-\contentsline {subsubsection}{\numberline {3}Stability of the bump solution}{9}{}
+\contentsline {subsubsection}{\numberline {3}Stability of the bump solution}{8}{}
+\contentsline {subsubsection}{\numberline {4}When $m_0^{(1)} \not =0$}{9}{}
 \contentsline {subsection}{\numberline {E}OSI distribution}{9}{}
 \contentsline {section}{\numberline {IV}Simulations}{9}{}
 \contentsline {subsection}{\numberline {A}Rewiring: Adding $\mathcal {O} (\sqrt {K})$functionally specific connections}{9}{}
-\contentsline {subsubsection}{\numberline {1}Dynamics of the phase}{9}{}
-\contentsline {subsubsection}{\numberline {2}Virtual rotation}{9}{}
 \contentsline {subsection}{\numberline {B}Rewiring with strenghtened connectiones}{9}{}
 \contentsline {section}{\numberline {V}Conclusions}{9}{}
 \appendix 
 \contentsline {section}{\numberline {}Appendixes}{10}{}
-\contentsline {subsection}{\numberline {1}Mean input}{10}{}
-\contentsline {subsection}{\numberline {2}Variance of the input}{10}{}
-\contentsline {subsection}{\numberline {3}Quenched disorder}{10}{}
-\contentsline {subsection}{\numberline {4}Computing $\kappa _{critical}$}{10}{}
-\contentsline {subsection}{\numberline {5}Stability of the bump solution}{11}{}
-\contentsline {subsection}{\numberline {6}Simulations}{12}{}
-\contentsline {section}{\numberline {}References}{12}{}
+\contentsline {section}{\numberline {A}Binary Networks}{10}{}
+\contentsline {subsubsection}{\numberline {}The model}{10}{}
+\contentsline {subsubsection}{\numberline {}Analysis}{11}{}
+\contentsline {subsubsection}{\numberline {}Generating tuning curves}{13}{}
+\contentsline {section}{\numberline {B} Model with specific connections}{14}{}
+\contentsline {subsection}{\numberline {1}Mean input}{14}{}
+\contentsline {subsection}{\numberline {2}Variance of the input}{14}{}
+\contentsline {subsection}{\numberline {3}Quenched disorder}{15}{}
+\contentsline {subsection}{\numberline {4}Computing $\kappa _{critical}$}{15}{}
+\contentsline {subsection}{\numberline {5}Stability of the bump solution}{15}{}
+\contentsline {subsection}{\numberline {6}Simulations}{16}{}
+\contentsline {section}{\numberline {}References}{17}{}

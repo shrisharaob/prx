@@ -12,6 +12,7 @@
     "./rndnw/analysis"
     "./specific_connections"
     "./simulations"
+    "./rndnw/methods_binary"
     "./appendix2"
     "revtex4-1"
     "revtex4-110"

@@ -1,43 +1,25 @@
-\section{Simulations}
-% \newcommand{\mEOne}{m_E^{(1)}}
-% \newcommand{\mEZero}{m_E^{(0)}}
-% \newcommand{\mIZero}{m_I^{(0)}}
-% The numeric curve is obtained by solving the following equations simultaneously,
-% \begin{widetext}
-% \begin{eqnarray}
-% \label{me0Sol}
-% m_E^{(0)}(p) =&& \frac{1}{\pi} \int_0^\pi d\phi \;  H\left( \frac{1 - \sqrt{K} \sum_B J_{AB} m_B^{(0)} - p J_{EE} \mEOne(p) \cos(2 \phi) }{\sqrt{\sum_B J_{EB}^2 m_B^{(0)} + \frac{p}{\sqrt{K}} J^2_{EE} \mEOne(p) \cos2\phi} } \right)\\
-% \label{me1Sol}
-% \mEOne(p) =&& \frac{2}{\pi} \int_0^\pi d\phi \; \cos 2\phi H\left( \frac{1 - \sqrt{K} \sum_B J_{AB} m_B^{(0)} - p J_{EE} \mEOne(p)  \cos(2 \phi)}{\sqrt{\sum_B J_{EB}^2 m_B^{(0)} + \frac{p}{\sqrt{K}} J^2_{EE} \mEOne(p) \cos2\phi} } \right)  \\
-% \label{mi0Sol}
-% m_I^{(0)} =&& \frac{1}{\pi} \int_0^\pi d\phi \;  H\left( \frac{1 - \sqrt{K} \sum_B J_{AB} m_B^{(0)} }{\sqrt{\sum_B J_{IB}^2 m_B^{(0)}}} \right) \\
-% \end{eqnarray}
-% \end{widetext}
-
+\section{\label{sec:simulations}Simulations}
+In this section, we present the results of numerical simulations of finite networks of binary neurons with specific connectivity as described in section \ref{netwArch}. We have used sequential dynamics with random update. At each time step we randomly pick a neuron $\sigma_A^i$ and update its state to either $0$ or $1$ with probability $P \left(\sigma_A^1(t, \theta) = 1 \,|\, u_A^i(t, \theta) \right) = \Theta(u_A^i - T_A)$. Where total input to the neuron $\sigma_A^i$ at time $t$ is $u_A^i(t, \theta) = \sum_{B \in \lbrace 0, E, I \rbrace} \frac{J_{AB}}{\sqrt{K}} \sum_{j} C_{AB}^{ij} \sigma_B^j(t, \theta)$. And  $T_A$ is the threshold of the population $A$\@. For simplicity, we set all the weights for connected neurons to be equal to $\frac{J_{AB}}{\sqrt{K}}$, such that they satisfy the balance conditions\@.
 \subsection{Rewiring: Adding $\mathcal{O} (\sqrt{K})$functionally specific connections}
-We verified our theory by simulating finite N networks of binary neurons with the connectivity as described in section \ref{netwArch}. 
-The control simulation was a purely random network operating in the balanced regieme. First we removed $\kappa \sqrt{K}$ connections on average. Then, we introduced $\kappa \sqrt{K}$ new connections that depended on the diferrence in PO's. 
+The control simulation was a purely random network operating in the balanced regieme. First we removed $\kappa \sqrt{K}$ connections on average. Then, we introduced $\kappa \sqrt{K}$ new connections that depended on the diferrence in PO's. \\
 
 % %\subsubsection{$\kappa \; \sqrt{K}$, modified model}
 % \begin{itemize}
 % 	\item Remove $\kappa \sqrt{K}$ connections on average
 % 	\item Replace them by new $\kappa \sqrt{K}$ connections that depend on the difference in PO's
 % \end{itemize}
+% .\\
+% \paragraph{Dynamics of the phase}
+% \begin{itemize}
+%   \item The final position of the bump depends on the initial conditions
+%   \item For a finite network, there is a discrete number of fixed points. The drift term approaches zero as $N \rightarrow \infty$
+% \end{itemize}
 
-\subsubsection{Dynamics of the phase}
-\begin{itemize}
-  \item The final position of the bump depends on the initial conditions
-  \item For a finite network, there is a discrete number of fixed points. The drift term approaches zero as $N \rightarrow \infty$
-\end{itemize}
-
-\subsubsection{Virtual rotation}
+% \paragraph{Virtual rotation} 
+% .\\
 
 \subsection{Rewiring with strenghtened connectiones}
-To 
-\begin{itemize}
-	\item Remove $\kappa \sqrt{K}$ connections on average
-	\item Replace them by new $\frac{\kappa}{\omega} \sqrt{K}$ connections of strength $\omega J_{EE}$ that depend on the difference in PO's
-\end{itemize}
+To simulate a more biologically realistic sinario. we removed $\kappa \sqrt{K}$ connections on average and replaced them by new $\frac{\kappa}{\omega} \sqrt{K}$ connections of strength $\omega J_{EE}$ that depend on the difference in PO's.
 
 %\subsection{Circular variance as a function of $\kappa$ and $\omega$} 
 

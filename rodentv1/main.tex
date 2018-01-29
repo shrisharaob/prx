@@ -49,7 +49,7 @@
 
 %\usepackage[showframe,%Uncomment any one of the following lines to test 
 %%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
-%%text={7in,10in},centering,
+%%text={7in,10in},centering,     
 %%margin=1.5in,
 %%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
 %%height=10in,a5paper,hmargin={3cm,0.8in},
@@ -58,6 +58,7 @@
 \usepackage{lipsum}
 \input{notation}
 
+%\renewcommand{\contentsname}{outline}
 
 \begin{document}
 
@@ -95,7 +96,7 @@
 \collaboration{CLEO Collaboration}%\noaffiliation
 
 \date{\today}% It is always \today, today,
-             %  but any date may be explicitly specified
+             %  but any date may be explicitly specified 
 
 \begin{abstract}
 \input{abstract}
@@ -127,10 +128,8 @@ use the optional argument of the \verb+\item+ command to give the category of ea
 \input{./rndnw/model}
 \input{./rndnw/analysis}
 
-.\\
-\newpage
-.\\
-\newpage
+% .\\
+% \newpage
 
 \input{./specific_connections}
 
@@ -143,7 +142,7 @@ use the optional argument of the \verb+\item+ command to give the category of ea
 
 \appendix
 \section*{Appendixes}
-%\input{./rndnw/methods_binary} 
+\input{./rndnw/methods_binary} 
 \input{./appendix2}
 
 

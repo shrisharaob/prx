@@ -1,27 +1,24 @@
+\section{\label{appendix1}Binary Networks}
 We model a network of layer 2/3 neurons in the primary visual cortex with salt-and-pepper
 organization, that receives input from excitatory cells in layer 4. 
 
-We consider two models, a binary network and a network of conductance-based
-neurons. The binary network can be studied fully analytically, enabling us to 
+We consider a binary network which can be studied fully analytically, enabling us to 
 understand the mechanism of orientation selectivity in the limit where the 
 connectivity is sparse and the average number of inputs, $K$, goes to infinity.
 In this model we compare the mechanism for orientation selectivity in the
 case where connectivity is solely dependent on distance, with the one where
 the connectivity also depends on the difference in preferred orientation of 
 the neurons.
-
-We verify that the results derived in the binary network without functional
-map also hold in a more realistic conductance-based model. This model has the 
-advantage that the relation between the firing and voltage statistics 
+The results presented here in the binary network without functional map also hold for more realistic conductance-based models. We refer to our previous study \cite{} for furter detalis. Conductance based model has the advantage that the relation between the firing and voltage statistics 
 can be investigated here, an issue that cannot be addressed in the binary network.
-We also investigate in this model the finite sparseness and finite $K$ effects. 
+%We also investigate in this model the finite sparseness and finite $K$ effects. 
  
-In both models the network consists of $N_E$ excitatory and $N_I$ inhibitory 
+The network consists of $N_E$ excitatory and $N_I$ inhibitory 
 neurons organized on a ring with  period $\pi$\@. We denote neuron $i$ of 
 population $A$ (with $A=E,I$ and $i=1,2,\ldots,N_A$) as neuron $(i,A)$. 
 The position on the ring of neuron $(i,A)$ is $\phi_i^A=\pi i/N_A$.
 
-\subsection*{Binary Networks}
+
 \subsubsection*{The model}
 In the binary network the neurons are modeled as binary units. They are 
 updated sequentially. The state, $\sigma_i^A$, of neuron $(i,A)$ is updated, 
@@ -227,13 +224,13 @@ the analysis to derive these parameters.
 
 A convenient feature of the binary neuron model is that the average activity,
 $m_A\equiv\langle m_i^A\rangle_{\delta\phi}$, given by
-\begin{equation}
-m_A(\theta)=\int\!\frac{dx}{\sqrt{2\pi}}\,e^{-x^2/2}
+\begin{eqnarray}
+m_A(\theta)=&&\int\!\frac{dx}{\sqrt{2\pi}}\,e^{-x^2/2}
 H\left(\frac{T_A-u_A(\theta)-\sqrt{\gamma_A(\theta)}x}
-{ \sqrt{\alpha_A(\theta)-\gamma_A(\theta)}}\right)
-=H\left(\frac{T_A-u_A(\theta)}{\sqrt{\alpha_A(\theta)}}\right),
+{ \sqrt{\alpha_A(\theta)-\gamma_A(\theta)}}\right) \nonumber \\
+=&& H\left(\frac{T_A-u_A(\theta)}{\sqrt{\alpha_A(\theta)}}\right),
 \label{meanrate:eq}
-\end{equation}
+\end{eqnarray}
 is independent of $\gamma_A$\@. Thus if we can express $u_A$ and $\alpha_A$ in 
 the mean activities, $m_B$, this together with Eqn.~(\ref{meanrate:eq}) 
 determines these quantities.\\
@@ -251,7 +248,7 @@ u_{A0}(\theta)=\langle u_i^{A0}\rangle_{\delta\phi}=
 \end{equation}
 while for $A=E,I$
 \begin{eqnarray}
-u_{AB}(\theta) = \langle u_i^{AB}\rangle_{\delta\phi} & = & \frac{J_{AB}}{\sqrt{K}} \sum_{j=1}^{N_B}
+u_{AB}(\theta) & = & \langle u_i^{AB}\rangle_{\delta\phi}  =  \frac{J_{AB}}{\sqrt{K}} \sum_{j=1}^{N_B}
 \langle C_{ij}^{AB}\rangle_{\delta\phi}m_B(\theta-\phi_j^B)
 \nonumber \\
 & = & \sqrt{K}J_{AB}\left[ m_B^{(0)}+p\,m_B^{(1)}\cos 2\theta\right].
@@ -359,14 +356,14 @@ for a stimulus at $\theta+\Delta$ and at $\theta-\Delta$.
 It can be calculated using Eqn.~(\ref{ind-rate:eq}), by averaging over 
 the correlated Gaussian variables $x_i^A(\theta+\Delta)$ and 
 $x_i^A(\theta-\Delta)$\@. After some algebra one obtains
-\begin{equation}
-q_{A}(\theta,\Delta) = 
+\begin{eqnarray}
+q_{A}(\theta,\Delta) & = &
 \int\!Dx\, H\left(\frac{T_A-u_A^+-\sqrt{\beta_A}x}
-{\sqrt{\alpha_A^+-\beta_A}}\right)
-H\left(\frac{T_A-u_A^--\sqrt{\beta_A}x}
-{\sqrt{\alpha_A^--\beta_A}}\right),
+{\sqrt{\alpha_A^+-\beta_A}}\right) \nonumber \\
+&\qquad& \times H\left(\frac{T_A-u_A^--\sqrt{\beta_A}x}
+{\sqrt{\alpha_A^--\beta_A}}\right)
 \label{qA:eq}
-\end{equation}
+\end{eqnarray}
 where we used the abbreviations, $u_A^\pm=u_{A}(\theta\pm\Delta)$,
 $\alpha_A^\pm=\alpha_{A}(\theta\pm\Delta)$ and
 $\beta_A=\beta_{A}(\theta,\Delta)$\@.
@@ -455,11 +452,12 @@ $\beta_{A}(m_0,m_0^\prime,\theta,\Delta)=\beta_{A}(m_0^\prime,m_0,\theta,-\Delta
 Taking these symmetries into account we can write 
 $\beta_{A}(m_0,m_0^\prime,\theta,\Delta)=\beta_{A}^{(0)}
 (m_0,m_0^\prime,\Delta)+$\\$\beta_{A}^{(1)}(m_0,m_0^\prime,\Delta)\cos 2\theta$ as
-\begin{equation}
-\beta_{A}(m_0,m_0^\prime,\theta,\Delta)=
-\sum_{n=0}^\infty \beta_{A}^{(0,2n)}(m_0,m_0^\prime)\cos 4n \Delta
-+\beta_{A}^{(1,2n+1)}(m_0,m_0^\prime)\cos 2\theta\cos 2(2n+1) \Delta,
-\end{equation}
+\begin{eqnarray}
+\beta_{A}(m_0,m_0^\prime,\theta,\Delta) &=& \sum_{n=0}^\infty \beta_{A}^{(0,2n)}(m_0,m_0^\prime)\cos 4n \Delta
+\nonumber \\
+&\quad& + \beta_{A}^{(1,2n+1)}(m_0,m_0^\prime)\cos 2\theta \nonumber \\
+&\qquad& \qquad \times \cos 2(2n+1) \Delta,
+\end{eqnarray}
 where $\beta_{A}^{(0,n)}$ and $\beta_{A}^{(1,n)}$ are the $n$th Fourier
 components in $\Delta$ of $\beta_{A}^{(0)}$ and $\beta_{A}^{(1)}$
 respectively and $\beta^{(n,m)}(m_0,m_0^\prime)=
@@ -490,7 +488,7 @@ This means that the Circular Variance (\CircVar, see below) of the population
 averaged response satisfies $\CircVar=1-\mu/p$,and is independent of contrast.
 
 \subsubsection*{Generating tuning curves}
-Setting $\gamma_A(\theta)x_i^A(\theta)$ to $\Delta u_i^A$, we can
+Setting $\sqrt{\gamma_A(\theta)}x_i^A(\theta)$ to $\Delta u_i^A$, we can
 write Eqn. (\ref{ind-rate:eq}) as
 \begin{equation}
 m_i^A(m_0,\theta)=H\left(\frac{T_A-u_A(m_0,\theta)-\Delta u_i^A(m_0,\theta)}
@@ -520,10 +518,10 @@ properties. The method to generate these sample outputs is as follows.
 
 Since $\Delta u_i^{A}$ is $\pi$-periodic in $\theta$, it can be
 written as
-\begin{equation}
-\Delta u_i^{A}(m_0,\theta)=\sum_{n=0}^\infty V^{(n)}(m_0)\cos 2n\theta+
-W^{(n)}(m_0)\sin 2n\theta,
-\end{equation}
+\begin{eqnarray}
+\Delta u_i^{A}(m_0,\theta) &=& \sum_{n=0}^\infty V^{(n)}(m_0)\cos 2n\theta \nonumber \\
+&\qquad& + W^{(n)}(m_0)\sin 2n\theta
+\end{eqnarray}
 where $V^{(n)}$ and $W^{(n)}$ are Gaussian random variables with a mean of 0,
 whose correlations should be chosen such that 
 $\langle \Delta u_i^{A}(m_0,\theta+\Delta)
@@ -576,3 +574,8 @@ different angles $\theta$ and different input levels $m_0$, to generate the
 orientation tuning curves for a sample neuron at different contrasts.
 More samples can be produced by applying this algorithms to many sets
 of vectors, $\vec{x}$ and $\vec{y}$, drawn independently.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:
