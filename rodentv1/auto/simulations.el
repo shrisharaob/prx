@@ -2,5 +2,6 @@
  "simulations"
  (lambda ()
    (LaTeX-add-labels
-    "sec:simulations")))
+    "sec:simulations"
+    "fig:simME1vsKappa")))
 

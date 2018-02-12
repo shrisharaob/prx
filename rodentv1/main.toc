@@ -23,8 +23,8 @@
 \contentsline {subsubsection}{\numberline {4}When $m_0^{(1)} \not =0$}{9}{}
 \contentsline {subsection}{\numberline {E}OSI distribution}{9}{}
 \contentsline {section}{\numberline {IV}Simulations}{9}{}
-\contentsline {subsection}{\numberline {A}Rewiring: Adding $\mathcal {O} (\sqrt {K})$functionally specific connections}{9}{}
-\contentsline {subsection}{\numberline {B}Rewiring with strenghtened connectiones}{9}{}
+\contentsline {subsection}{\numberline {A}Adding $\mathcal {O} (\sqrt {K})$functionally specific connections}{9}{}
+\contentsline {subsection}{\numberline {B}Specific connections with strenghtened connectiones}{9}{}
 \contentsline {section}{\numberline {V}Conclusions}{9}{}
 \appendix 
 \contentsline {section}{\numberline {}Appendixes}{10}{}

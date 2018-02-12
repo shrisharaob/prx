@@ -12,6 +12,7 @@
     "me1Sol"
     "stabme0"
     "stabme1"
+    "appendix:sim"
     "me0Sol"
     "mi0Sol")))
 

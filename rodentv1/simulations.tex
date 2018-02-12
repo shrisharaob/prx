@@ -1,7 +1,13 @@
 \section{\label{sec:simulations}Simulations}
-In this section, we present the results of numerical simulations of finite networks of binary neurons with specific connectivity as described in section \ref{netwArch}. We have used sequential dynamics with random update. At each time step we randomly pick a neuron $\sigma_A^i$ and update its state to either $0$ or $1$ with probability $P \left(\sigma_A^1(t, \theta) = 1 \,|\, u_A^i(t, \theta) \right) = \Theta(u_A^i - T_A)$. Where total input to the neuron $\sigma_A^i$ at time $t$ is $u_A^i(t, \theta) = \sum_{B \in \lbrace 0, E, I \rbrace} \frac{J_{AB}}{\sqrt{K}} \sum_{j} C_{AB}^{ij} \sigma_B^j(t, \theta)$. And  $T_A$ is the threshold of the population $A$\@. For simplicity, we set all the weights for connected neurons to be equal to $\frac{J_{AB}}{\sqrt{K}}$, such that they satisfy the balance conditions\@.
-\subsection{Rewiring: Adding $\mathcal{O} (\sqrt{K})$functionally specific connections}
-The control simulation was a purely random network operating in the balanced regieme. First we removed $\kappa \sqrt{K}$ connections on average. Then, we introduced $\kappa \sqrt{K}$ new connections that depended on the diferrence in PO's. \\
+In this section, we present the results of numerical simulations of finite networks of binary neurons with specific connectivity as described in section \ref{netwArch}. We have used sequential dynamics with random update. At each time step we randomly pick a neuron $\sigma_A^i$ and update its state to either $0$ or $1$ with probability $P \left(\sigma_A^1(t, \theta) = 1 \,|\, u_A^i(t, \theta) \right) = \Theta(u_A^i - T_A)$. Where total input to the neuron $\sigma_A^i$ at time $t$ is $u_A^i(t, \theta) = \sum_{B \in \lbrace 0, E, I \rbrace} \frac{J_{AB}}{\sqrt{K}} \sum_{j} C_{AB}^{ij} \sigma_B^j(t, \theta)$. And  $T_A$ is the threshold of the population $A$\@. For simplicity, we set all the weights for connected neurons to be equal to $\frac{J_{AB}}{\sqrt{K}}$. $J_{AB}$ is chosen such that it satisfies the balance conditions.
+\subsection{Adding $\mathcal{O} (\sqrt{K})$functionally specific connections}
+\begin{figure}[b]
+\includegraphics[scale=1]{./figs/kappa_vs_mE1_sim.pdf}% Here is how to import EPS art
+\caption{\label{fig:simME1vsKappa} Finite size simulations with $m_0^{(0)} = 0.075$. The theory in the limit of infinite network size predicts a bump solution for some $\kappa > \kappa_c$. Finite size networks exhibit qualitatively similar behaviour. When $m_0^{(1)} = 0$, for some $\kappa > \kappa_c$, the system settles to a bump state i.e $m_E^{(1)} > 0$. When $m_0^{(1)} \neq 0$, already for $\kappa = 0$, the system has a stable bump solution. Results from the simulations converge to the finite $K$ solution (dashed line, Appendix \ref{appendix:sim}) as $N$ is increased.}  
+\end{figure}
+
+
+%Introduced $\kappa \sqrt{K}$ new connections that depended on the diferrence in PO's. \\
 
 % %\subsubsection{$\kappa \; \sqrt{K}$, modified model}
 % \begin{itemize}
@@ -18,8 +24,9 @@ The control simulation was a purely random network operating in the balanced reg
 % \paragraph{Virtual rotation} 
 % .\\
 
-\subsection{Rewiring with strenghtened connectiones}
-To simulate a more biologically realistic sinario. we removed $\kappa \sqrt{K}$ connections on average and replaced them by new $\frac{\kappa}{\omega} \sqrt{K}$ connections of strength $\omega J_{EE}$ that depend on the difference in PO's.
+\subsection{Specific connections with strenghtened connectiones}
+% To simulate a more biologically realistic sinario,
+% We constructed the E-to-E connectivity matrix  $\kappa \sqrt{K}$ connections on average and replaced them by new $\frac{\kappa}{\omega} \sqrt{K}$ connections of strength $\omega J_{EE}$ that depend on the difference in PO's.
 
 %%% Local Variables:
 %%% mode: latex
